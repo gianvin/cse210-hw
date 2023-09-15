@@ -4,42 +4,44 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Prep2 World!");
-        Console.Write("What is your grade percentag? ");
-        string grade = Console.ReadLine();
 
-        if (grade >= "90")
+        Console.Write("What is your grade percentag? ");
+        string answer = Console.ReadLine();
+        int percent = int.Parse(answer);
+
+        string letter = "";
+
+        if (percent >= 90)
         {   
-           Console.WriteLine("A");
+           letter = "A";
         }
-        else if (grade >= "80")
+        else if (percent >= 80)
         {
-           Console.WriteLine("B");
+           letter = "B";
         }
-        
-        else if (grade >= "70")
+        else if (percent >= 70)
         {
-           Console.WriteLine("C");
+          letter = "C";
         }
-        else if (grade >= "60")
+        else if (percent >= 60)
         {
-           Console.WriteLine("D");
+          letter = "D";
         }
         else 
         {
-           Console.WriteLine("F");
-       
+           letter = "F";
+        }
+        Console.WriteLine($"Your grade is: {letter}");
         
-        if (grade == "70" || >= "70")
+        if (percent >= 70)
         { 
             Console.WriteLine("Congratulations! You passed the course. ");
         }
         else
         {
-            Console.WriteLine("Next time, Study hard. ")
+            Console.WriteLine("Next time, Study harder. ");
         }
 
     }
-
 
 }
