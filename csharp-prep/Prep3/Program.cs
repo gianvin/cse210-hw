@@ -20,10 +20,22 @@ else
     word = "You guessed it!";
 }
 Console.WriteLine($"{word}");
-do
+number = -1;
+while (number != 18)
 {
     Console.Write("What is your guess? ");
-    guess = Console.ReadLine();
-} while (number != 18);
-    Console.Write("You guessed it");
+    number = int.Parse(Console.ReadLine());
 
+    if (number < 18)
+    {
+        Console.WriteLine("higher");
+    }
+    else if (number > 18)
+    {
+        Console.WriteLine("lower");
+    }
+    else
+    {
+        Console.WriteLine("You guessed it!");
+    }
+}
