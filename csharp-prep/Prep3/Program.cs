@@ -11,22 +11,19 @@ class Program
         
         string word = "";
 
-        if (number <= 6)
+        if (number < 6)
         {
            word = "higher";
         }
-        else if (number >= 6)
+        else if (number > 6)
         {
             word = "lower";
         }
-        else
+        else 
         {
-            word = "You guessed it!";
+           word = "You guessed it!";
         }
-    
-    } 
-
-
-
-
+        Console.WriteLine($"{word}");
+    }   
+            
 }
