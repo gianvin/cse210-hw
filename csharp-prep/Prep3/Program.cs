@@ -24,5 +24,6 @@ do
 {
     Console.Write("What is your guess? ");
     guess = Console.ReadLine();
-} while (number == 18);
+} while (number != 18);
     Console.Write("You guessed it");
+
