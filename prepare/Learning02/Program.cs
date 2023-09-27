@@ -2,7 +2,7 @@ using System;
 
 class Program
 {
-    
+    static void Main(string[] args)
      // A code template for the category of things known as Job. The
     // responsibility of a Job is to hold and display Company information.
     public class Job
@@ -17,7 +17,7 @@ class Program
         public Job()
         {  
         } 
-    // A method that displays the the title of the job 
+    // A method that displays the title of the job 
        
         public void ShowJobTitle()
         {
