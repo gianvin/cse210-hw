@@ -4,7 +4,6 @@ class Program
 {
     static void Main(string[] args)
     {
-
         Job job1 = new Job();
         job1._jobTitle = "Teacher";
         job1._company = "Santulan Elementary School";
@@ -20,28 +19,9 @@ class Program
         Resume myResume = new Resume();
         myResume._name = "Gina S. Ong";
 
-        myResume.jobs.Add(job1);
-        myResume.jobs.Add(job2);
+        myResume._jobs.Add(job1);
+        myResume._jobs.Add(job2);
 // A method that displays the Resume
         myResume.Display();
    }
-
-    private class Job
-    {
-        internal string _jobTitle;
-        internal string _company;
-        internal int _endYear;
-        internal int _startYear;
-    }
-}
-
-internal class Resume
-{
-    internal string _name;
-    internal object jobs;
-
-    internal void Display()
-    {
-        throw new NotImplementedException();
-    }
 }
