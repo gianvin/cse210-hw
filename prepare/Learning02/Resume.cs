@@ -10,5 +10,12 @@ public class Resume
     public void Display()
     {
         Console.WriteLine($"Name: {_name}");
+        Console.WriteLine("Jobs:");
+    // Create the loop for Job
+    foreach (Job job in _jobs)
+    {
+        // Call the Display method on each job
+        job.Display();
+    }
     }
 }
