@@ -13,7 +13,10 @@ class Program
         Console.WriteLine(" 5. Quit");
         Console.Write("What would you like to do? ");
         string answer = Console.ReadLine();
-        
+
+        // Write the random prompt Generator
+        string answer = "";
+        if answer 
 
     }
 }
