@@ -4,6 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
+        DateTime theCurrentTime = DateTime.Now;
+string dateText = theCurrentTime.ToShortDateString();
         Console.WriteLine("Welcome to the Journal Program! ");
         Console.WriteLine("Please select one of the following choices: ");
         Console.WriteLine(" 1. Write");
@@ -14,7 +16,7 @@ class Program
         Console.Write("What would you like to do? ");
         string choice = Console.ReadLine();
 
-        // Write the random prompt Generator
+
         
 
     }
