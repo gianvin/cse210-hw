@@ -1,5 +1,4 @@
 using System;
-using System.Runtime.InteropServices.Marshalling;
 
 class Program
 {
@@ -14,7 +13,9 @@ class Program
         Console.WriteLine(" 5. Quit");
         Console.Write("What would you like to do? ");
         string choice = Console.ReadLine();
-        int prompt = int.Parse(choice);
+
+        // Write the random prompt Generator
+        
+
     }
 }
-
