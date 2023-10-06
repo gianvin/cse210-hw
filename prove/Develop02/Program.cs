@@ -1,21 +1,33 @@
 using System;
+using System.Collections;
 
 class Program
 {
     static void Main(string[] args)
     {
         Console.WriteLine("Welcome to the Journal Program! ");
-        Console.WriteLine("Please select one of the following choices: ");
-        Console.WriteLine(" 1. Write");
-        Console.WriteLine(" 2. Display");
-        Console.WriteLine(" 3. Load");
-        Console.WriteLine(" 4. Save");
-        Console.WriteLine(" 5. Quit");
-        Console.Write("What would you like to do? ");
-        string choice = Console.ReadLine();
+        Prompt Prompt = new Prompt();
+        Journal Journal = new Journal();
+        do{
 
-        // Write the random prompt Generator
-        
+        Prompt.DisplayPrompt();
+        do{
+            Prompt.UpdateUserChoice();
+        }while((Prompt._response > 5) || (Prompt._choice < 1));
 
+        switch (Prompt._response)
+        case 1:
+            Journal.WriteJournal();
+        break;
+        case 2:
+            Journal.DisplayJournal();
+        break;
+        case 3
+            Journal.SaveJournal();
+        break;
+        case 4
+            Journal.LoadJournal
+        }
     }
+    
 }
