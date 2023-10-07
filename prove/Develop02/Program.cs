@@ -4,8 +4,12 @@ using System.Net;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Security.Cryptography.X509Certificates;
+using System.ComponentModel.DataAnnotations;
 class Program
 {
+    private static int _choice;
+    private static object prompt;
+
     static void Main(string[] args)
     {
         Console.WriteLine("Welcome to the Journal Program! ");
@@ -35,7 +39,8 @@ class Program
         default;
         break;
         }
-    }while(Menu._choice !=5)
-
-    }
+    }while(Menu._choice !=5);
+    {
+   public void static SavetoFile(List<Journal>)   
+    
 }

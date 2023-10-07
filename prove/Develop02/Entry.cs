@@ -19,12 +19,31 @@ public class Entry
         Console.WriteLine("5. Quit");
 
         return menu;
-    //}    public string _date;
-    //public string _prompt;
-    //public string _response;
-
-   // public void Display()
-    //{
-    //    Console.WriteLine($"{_date} ({_prompt})~{_response}");
     }
-}
+    public void DisplayJournal(){
+        //print entry in the journal line by line
+        foreach (string line in _pages){
+            Console.WriteLine(line);
+        }
+    }
+    public void WriteJournal(){
+        //display propmt
+        Prompt Prompt = new Prompt();
+        _prompt = Prompt.GetPrompt();
+        Console.WriteLine(_prompt);
+        //Save the entry
+        _entry = Console.ReadLine();
+        //save the current
+        DateTime theCurrentTime = DateTime.Now
+        string dateText = theCurrentTime.ToShortDateString();
+        //add entry with date
+        _pages.Add(Date: + dateText + " - Promt: " + _prompt);
+        _pages.Add(_entry):
+    public void LoadJournal(){
+
+    }
+    public void SaveJournal(){
+        
+    }
+    }
+}  
