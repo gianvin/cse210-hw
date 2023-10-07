@@ -8,23 +8,34 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Menu
-    public int _choice = 0;
+        Console.WriteLine("Welcome to the Journal Program! ");
+        Menu Menu = new Menu();
+        Journal Journal = new Journal();
+        
+         do{
 
-    public Menu()
-    {
+        Menu.DisplayMenu();
+        do{
+            Menu.UpdateUserChoice();
+        }while((Menu._choice > 5) || (Menu._choice < 1));
 
-    }
-    public void DisplayMenu()
-    {
-        Console.WriteLine("Please select one of the following choices ");
-        Console.WriteLine("1. Write"); 
-        Console.WriteLine("2. Display"); 
-        Console.WriteLine("3. Load"); 
-        Console.WriteLine("4. Save"); 
-        Console.WriteLine("5. Quit");
-    }   
-        List<string> menu = new List<string>();
-         
+        switch (Menu._choice
+        case 1:
+            Journal.WriteJournal();
+        break;
+        case 2:
+            Journal.DisplayJournal();
+        break;
+        case 3;
+            Journal.LoadJournal();
+        break;
+        case 4;
+            Journal.SaveJournal();
+        break;
+        default;
+        break;
+        }
+    }while(Menu._choice !=5)
+
     }
 }
