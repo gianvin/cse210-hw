@@ -20,12 +20,26 @@ public class Entry
 
         return menu;
     }
-    public void DisplayJournal(){
+    public List<string> _journal;
+    public void DisplayJournal()
+    {
         //print entry in the journal line by line
-        foreach (string line in _pages){
-            Console.WriteLine(line);
+        Console.WriteLine("What is the filename? ");
+        string answer = Console.ReadLine();
+        string[] lines = System.IO.File.ReadAllLines(answer);
+        _journal.Clear();
+        foreach (string line in lines)
+        {
+            string[] parts = line.Split(" - ");
+            string dateFile = parts[0];
+            string first = parts[1];
+            string last = parts[2];
+            Console.WriteLine($"{dateFile} - {first}");
+            Console.WriteLine($" - {last}");
+            string entry = $"{dateFile} - {first} - {last}";
+            _journal.Add(entry);
         }
-    }
+  
     public void WriteJournal(){
         //display propmt
         Prompt Prompt = new Prompt();
