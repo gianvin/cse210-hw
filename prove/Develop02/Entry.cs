@@ -39,7 +39,8 @@ public class Entry
         //add entry with date
         _pages.Add(Date: + dateText + " - Promt: " + _prompt);
         _pages.Add(_entry):
-    public void LoadJournal(){
+    public void LoadJournal()
+    {
 
     }
     public void SaveJournal(){

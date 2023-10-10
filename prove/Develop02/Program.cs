@@ -20,7 +20,7 @@ class Program
             Menu.UpdateUserChoice();
         }while((Menu._choice > 5) || (Menu._choice < 1));
 
-        switch (Menu._choice
+        {switch (Menu._choice)
         case 1:
             Journal.WriteJournal();
         break;
@@ -36,8 +36,19 @@ class Program
         default;
         break;
         }while(Menu._choice !=5);
+   public static void SavetoFile(List<Journal>_entry);  
+   {
+    Console.WriteLine("Saving to file...");
+    string filename = Journal.txt;
+    using (StreamWriter outputFile = new StreamWriter(filename))
     {
-   public void static SavetoFile(List<Journal>);  
+        foreach (Entry e in Journal)
+        {
+            outputFile.WriteLine($"{e._date}~~{e._prompt}~~{e. _response});
+        }
+    }
+   }
     
+    } 
     }
 }
