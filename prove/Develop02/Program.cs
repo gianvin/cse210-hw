@@ -1,10 +1,7 @@
 using System;
-using System.Collections;
-using System.Net;
+
 using System.Collections.Generic;
-using System.ComponentModel.Design;
-using System.Security.Cryptography.X509Certificates;
-using System.ComponentModel.DataAnnotations;
+
 class Program
 {
     private static int _choice;
@@ -38,9 +35,9 @@ class Program
         break;
         default;
         break;
-        }
-    }while(Menu._choice !=5);
+        }while(Menu._choice !=5);
     {
-   public void static SavetoFile(List<Journal>)   
+   public void static SavetoFile(List<Journal>);  
     
+    }
 }

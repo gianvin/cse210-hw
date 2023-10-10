@@ -1,8 +1,8 @@
 public class Entry
 {
    // Menu
-        public int _choice = 0;
-    private readonly List<string> menu;
+    public int _choice = 0;
+    
 
     // Method
     public Entry()
@@ -29,8 +29,8 @@ public class Entry
     public void WriteJournal(){
         //display propmt
         Prompt Prompt = new Prompt();
-        _prompt = Prompt.GetPrompt();
-        Console.WriteLine(_prompt);
+        _prompts = Prompt.GetPrompt();
+        Console.WriteLine(_prompts);
         //Save the entry
         _entry = Console.ReadLine();
         //save the current
