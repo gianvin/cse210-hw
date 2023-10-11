@@ -15,3 +15,11 @@ public class Write
         _journal.Add(entry);
     }
 }
+public class Show
+{
+    public List<string> _journal;
+    public void Display()
+    {
+
+    }
+}
