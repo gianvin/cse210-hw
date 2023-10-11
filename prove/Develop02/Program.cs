@@ -24,42 +24,43 @@ class Program
             Console.WriteLine("3. Load"); 
             Console.WriteLine("4. Save"); 
             Console.WriteLine("5. Quit");
+            Console.Write("What would you like to do? ");
             string userInput = Console.ReadLine();
             int userChoice = int.Parse(userInput);
 
-            //if (userChoice) == 1)
-               // {
-                  //  Write writeNew = new Write();
-                   // writeNew._date = date;
-                    //writeNew._journal = journal;
-                    //writeNew._prompts = _prompts;
-                    //response = "yes";
-                //}
-        //else if (userChoice == 2)
-        //{
-         //   Show displayNew = new Show();
-         //   displayNew._journal = journal;
-          //  displayNew.Display();
-          //  response = "yes";
-        //}
-        //else if (userChoice == 3)
-       // {
-         //   Load loadNew = new Load();
-           // loadNew._jpurnal = journal;
-           // loadNew.Display();
-           // response = "yes";
-        }
-        //else if (userChoice == 4)
-        //{
-          //  Save saveNew = new Save();
-           // saveNew._journal = journal;
-            //saveNew.Display();
-            //response = "yes";
-        //}
-       //else if (userChoice == 5)
-       //{
-       // response = "no";
-      // }
-    //}  
-  
+            if (userChoice == 1)
+               {
+                Write writeNew = new Write();
+                writeNew._date = date;
+                writeNew._journal = journal;
+                writeNew._prompts = _prompts;
+                response = "yes";
+               }
+            else if (userChoice == 2)
+               {
+                 Show displayNew = new Show();
+                 displayNew._journal = journal;
+                 displayNew.Display();
+                 response = "yes";
+               }
+            else if (userChoice == 3)
+               {
+                Load loadNew = new Load();
+                loadNew._jpurnal = journal;
+                loadNew.Display();
+                response = "yes";
+               }
+            else if (userChoice == 4)
+               {
+                 Save saveNew = new Save();
+                 saveNew._journal = journal;
+                 saveNew.Display();
+                 response = "yes";
+               }
+            else if (userChoice == 5)
+              {
+                 response = "no";
+              }
+    }  
+
 }
