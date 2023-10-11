@@ -46,7 +46,7 @@ class Program
             else if (userChoice == 3)
                {
                 Load loadNew = new Load();
-                loadNew._jpurnal = journal;
+                loadNew._journal = journal;
                 loadNew.Display();
                 response = "yes";
                }
