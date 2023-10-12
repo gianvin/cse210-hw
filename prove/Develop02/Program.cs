@@ -30,39 +30,31 @@ class Program
 
             if (userChoice == 1)
                {
-            Write writeNew = new()
-            {
-                _date = date,
-                _journal = journal,
-                _prompts = _prompts
-            };
-            response = "yes";
+                Write writeNew = new Write();
+                writeNew._date = date;
+                writeNew._journal = journal;
+                writeNew._prompts = _prompts;
+                response = "yes";
                }
             else if (userChoice == 2)
                {
-            Show displayNew = new()
-            {
-                _journal = journal
-            };
-            displayNew.Display();
+                 Show displayNew = new Show();
+                 displayNew._journal = journal;
+                 displayNew.Display();
                  response = "yes";
                }
             else if (userChoice == 3)
                {
-            Load loadNew = new()
-            {
-                _journal = journal
-            };
-            loadNew.Display();
+                Load loadNew = new Load();
+                loadNew._journal = journal;
+                loadNew.Display();
                 response = "yes";
                }
             else if (userChoice == 4)
                {
-            Save saveNew = new()
-            {
-                _journal = journal
-            };
-            saveNew.Display();
+                 Save saveNew = new Save();
+                 saveNew._journal = journal;
+                 saveNew.Display();
                  response = "yes";
                }
             else if (userChoice == 5)
@@ -71,14 +63,4 @@ class Program
               }
     }  
 
-}
-
-internal class Save
-{
-    internal List<string> _journal;
-
-    internal void Display()
-    {
-        throw new NotImplementedException();
-    }
 }
