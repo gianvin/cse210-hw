@@ -64,3 +64,13 @@ class Program
     }  
 
 }
+
+internal class Save
+{
+    internal List<string> _journal;
+
+    internal void Display()
+    {
+        throw new NotImplementedException();
+    }
+}
