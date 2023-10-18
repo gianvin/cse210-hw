@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        List<int> numbers = new List<int>();
+        List<int> numbers = new();
         //Do-while list
         int userNumber = -1;
         while (userNumber !=0)

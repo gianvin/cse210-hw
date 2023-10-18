@@ -25,7 +25,7 @@ class Scripture
    
         foreach (string word in words)
         {
-            Word wordObject = new Word(word);
+            Word wordObject = new(word);
             this.verse.Add(wordObject);
         }
     }
@@ -59,7 +59,7 @@ class Scripture
 
     public override string ToString()
     {
-       StringBuilder scriptureText = new StringBuilder();
+       StringBuilder scriptureText = new();
 
        foreach (Word word in verse)
        {

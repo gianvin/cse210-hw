@@ -8,7 +8,7 @@ public class Entry
     public Entry(string _date, string )
     public void Display()
     {
-        Random rnd = new Random();
+        Random rnd = new();
         string anyPrompt = _prompts[rnd.Next(10)];
         Console.WriteLine(anyPrompt);
         string answer = Console.ReadLine();

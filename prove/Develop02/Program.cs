@@ -14,8 +14,10 @@ class Program
         Console.WriteLine("Welcome to the Journal Program! ");
         string date = DateTime.UtcNow.ToString("yyyy-mm-dd");
         string response = "yes";
-        List<string> journal = new List<string>();
-        List<string> prompts = new List<string> {"Who was the most interesting person I interacted with today?", "What was the best part of my day?", 
+        List<string> journal = new();
+        List<string> prompts = new()
+        {
+            "Who was the most interesting person I interacted with today?", "What was the best part of my day?", 
         "How did I see the hand of the Lord in my life today?", "What was the strongest emotion I felt today?",
         "If I had one thing I could do over today, what would it be?"};
         // Write the choices for the user
@@ -32,7 +34,7 @@ class Program
 
             if (userChoice == 1)
                {
-                Write writeNew = new Write();
+                Write writeNew = new();
                 writeNew._date = date;
                 writeNew._journal = journal;
                 writeNew._prompts = _prompts;
@@ -40,28 +42,28 @@ class Program
                }
             else if (userChoice == 2)
                {
-                 Show displayNew = new Show();
+                 Show displayNew = new();
                  displayNew._journal = journal;
                  displayNew.Display();
                  response = "yes";
                }
             else if (userChoice == 3)
                {
-                Load loadNew = new Load();
+                Load loadNew = new();
                 loadNew._journal = journal;
                 loadNew.Display();
                 response = "yes";
                }
             else if (userChoice == 4)
                {
-                 Save saveNew = new Save();
+                 Save saveNew = new();
                  saveNew._journal = journal;
                  saveNew.Display();
                  response = "yes";
                }
             else if (userChoice == 5)
               {
-                 Edit editNew = new Edit();
+                 Edit editNew = new();
                  editNew._journal = journal;
                  editNew.Display();
                  response = "yes";

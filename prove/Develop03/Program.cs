@@ -3,10 +3,10 @@ using System.Security.AccessControl;
 using System.Xml.Linq;
 
 // code reference for a scripture verse
-Reference reference = new Reference(" John 3:16 ");
+Reference reference = new(" John 3:16 ");
 
 // code for scripture text for the verse
-Scripture scripture = new Scripture("For God so loved the world that He gave His only begotten son that whosover believeth in Him shall not perish but have verlasting life. ");
+Scripture scripture = new("For God so loved the world that He gave His only begotten son that whosover believeth in Him shall not perish but have verlasting life. ");
 
 Console.WriteLine("Original Verse:");
 Console.WriteLine(scripture.ToString());
