@@ -2,29 +2,32 @@ using System;
 using System.Security.AccessControl;
 using System.Xml.Linq;
 
-class Program
+// code reference for a scripture verse
+Reference reference = new Reference(" John 3:16 ");
+
+// code for scripture text for the verse
+Scripture scripture = new Scripture("For God so loved the world that He gave His only begotten son that whosover believeth in Him shall not perish but have verlasting life. ");
+
+Console.WriteLine("Original Verse:");
+Console.WriteLine(scripture.ToString());
+Console.WriteLine("Press enter to continue or type quit to finish");
+
+if (scripture.IsFinished())
 {
-    static void Main(string[] args)
-    {
-        // code reference for a scripture verse
-        Reference reference = new Reference (" 1 Nephi 3:7");
-
-        // code for scripture text for the verse
-        Scripture scripture = new Scripture("And it came to pass that I, Nephi, said unto my father: I will go and do the things which the Lord hath commanded, for I know that the Lord giveth no commandments unto the children of men, save he shall prepare a way for them that they may accomplish the thing which he commandeth them.");
-
-        Console.WriteLine ("Original Verse:");
-        Console.WriteLine(scripture.ToString());
-
-        if (scripture.IsFinished())
-        {
-            Console.WriteLine("\nAll words are visible. Reading is finished");
-        }
-        // All words visible
-        foreach (Word word in scripture.GetVerse())
-        {
-            word.SetIsVisible(true);
-        }
-
-    } 
-    
+    Console.WriteLine("\nAll words are hidden. Memorizing is finished");
 }
+else
+{
+    Console.WriteLine("\nSome words are still visible. memorizing is not finished.");
+}
+// All words visible
+foreach (Word word in scripture.GetVerse())
+{
+    word.SetIsVisible(true);
+}
+Console.WriteLine("\nVerse with all words visible:");
+Console.WriteLine(scripture.ToString());
+// Hide some words in the verse
+scripture.HideWords();
+Console.WriteLine(" ");
+Console.WriteLine(scripture.ToString());
