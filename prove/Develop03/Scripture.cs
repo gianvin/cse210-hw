@@ -10,25 +10,6 @@ class Scripture
     private List<Word> verse;
     private string v;
 
-    public Scripture(string v)
-    {
-        this.v = v;
-    }
-
-    public Scripture(string scripture, Reference reference)
-    {
-        random = new Random();
-        this.reference = reference;
-        this.verse = new List<Word>();
-        // initialize the words in the scripture verse
-        string[] words = scripture.Split(new char[] {}, StringSplitOptions.RemoveEmptyEntries);
-   
-        foreach (string word in words)
-        {
-            Word wordObject = new(word);
-            this.verse.Add(wordObject);
-        }
-    }
     public void HideWords()
     {
         foreach (Word word in verse)
@@ -56,12 +37,31 @@ class Scripture
        }
        return verse.All(word => word.GetIsVisible());
     }
+    public Scripture(string scripture, Reference reference)
+    {
+        random = new Random();
+        this.reference = reference;
+        this.verse = new List<Word>();
+        // initialize the words in the scripture verse
+        string[] words = scripture.Split(new char[] {}, StringSplitOptions.RemoveEmptyEntries);
+   
+        foreach (string word in words)
+        {
+            Word wordObject = new(word);
+            this.verse.Add(wordObject);
+        }
+    }
+
+    public Scripture(string v)
+    {
+        this.v = v;
+    }
 
     public override string ToString()
     {
        StringBuilder scriptureText = new();
 
-       foreach (Word word in verse)
+        foreach (Word word in verse)
        {
         scriptureText.Append(word.ToString()).Append(" ");
        } 
