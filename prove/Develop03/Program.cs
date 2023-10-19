@@ -6,7 +6,7 @@ using System.Xml.Linq;
 Reference reference = new(" John 3:16 ");
 
 // code for scripture text for the verse
-Scripture scripture = new("For God so loved the world that He gave His only begotten son that whosover believeth in Him shall not perish but have verlasting life. ");
+Scripture scripture = new Scripture("For God so loved the world that He gave His only begotten son that whosover believeth in Him shall not perish but have verlasting life. ");
 
 Console.WriteLine("Original Verse:");
 Console.WriteLine(scripture.ToString());
