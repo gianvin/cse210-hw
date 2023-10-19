@@ -8,8 +8,6 @@ Reference reference = new(" John 3:16 ");
 // code for scripture text for the verse
 Scripture scripture = new("For God so loved the world that He gave His only begotten son that whosover believeth in Him shall not perish but have verlasting life. ");
 
-
-Console.WriteLine(scripture.ToString());
 Console.WriteLine("Press enter to continue or type quit to finish");
 
 if (scripture.IsFinished())
