@@ -12,7 +12,7 @@ class Program
         Console.WriteLine(f2.GetFractionString());
         Console.WriteLine(f2.GetDecimalValue());
 
-        Fraction f3 = new(3 / 4);
+        Fraction f3 = new(3, 4);
         Console.WriteLine(f3.GetDecimalValue());
         Console.WriteLine(f3.GetDecimalValue());
 

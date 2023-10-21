@@ -18,10 +18,10 @@ class Reference
        }
        else if (parts.Length == 2)
        {
-        string[] chapterVerse = parts[1].Split(":");
+        string[] chapterVerse = parts[1].Split("");
         book = parts[0];
         chapter = chapterVerse[0];
-        string[] verseRange = chapterVerse[1].Split("-");
+        string[] verseRange = chapterVerse[1].Split("");
         startVerse = verseRange[0];
         endVerse = verseRange.Length > 1 ? verseRange[1] : startVerse;
        }

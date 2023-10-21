@@ -8,13 +8,12 @@ class Scripture
     private Random random;
     private Reference reference;
     private List<Word> verse;
-    private string v;
 
     public void HideWords()
     {
         foreach (Word word in verse)
         {
-            if(random.Next(2) == 0)
+            if(random.Next(2) == 1)
             {
                 word.SetIsVisible(false);
             }
@@ -52,10 +51,6 @@ class Scripture
         }
     }
 
-    public Scripture(string v)
-    {
-        this.v = v;
-    }
 
     public override string ToString()
     {
@@ -67,9 +62,9 @@ class Scripture
        } 
        return scriptureText.ToString().Trim();
     }
-
     internal IEnumerable<Word> GetVerse()
     {
         throw new NotImplementedException();
     }
+    
 }
