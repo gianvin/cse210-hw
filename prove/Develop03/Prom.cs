@@ -10,7 +10,7 @@ class Program
     Console.WriteLine(item);
    
 // code for scripture text for the verse
-    string[] scriptureVerses = {"For God so loved the world that He gave His only begotten son that whosover believeth in Him shall not perish but have verlasting life.", "And it came to pass that I, nephi, said unto my Father: I will go and do the things which the Lord hath commandeth, for I know that the Lord giveth no commandments unto the children of men, save he shall prepare a way for them that they may accomplish the thing which he commandeth them."};
+    string[] scriptureVerses = {"For God so loved the world that He gave His only begotten son that whosoever believeth in Him shall not perish but have verlasting life.", "And it came to pass that I, nephi, said unto my Father: I will go and do the things which the Lord hath commandeth, for I know that the Lord giveth no commandments unto the children of men, save he shall prepare a way for them that they may accomplish the thing which he commandeth them."};
     foreach (string item in scriptureVerses)
     Console.WriteLine(item);
    
