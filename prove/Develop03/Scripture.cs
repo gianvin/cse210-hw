@@ -11,7 +11,7 @@ class Scripture
 
     public void HideWords()
     {
-        foreach (Word word in verse)
+        foreach (var word in verse)
         {
             if(random.Next(2) == 1)
             {

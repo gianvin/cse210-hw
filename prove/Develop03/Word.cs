@@ -25,7 +25,7 @@ class Word
     }
     public override string ToString()
     {
-        return isVisible ? word : "___";
+        return isVisible ? word : "__";
     }
 
 }

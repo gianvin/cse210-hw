@@ -1,55 +1,58 @@
 using System;
 using System.ComponentModel;
+using System.Data;
+using System.Net.Quic;
+using System.Reflection.Metadata.Ecma335;
 
 class Program
 {
     static void Main(string[] args)
     {
-        string[] Reference  = {" John 3:16","1 Nephi 1:7"};
+        string[] Reference  = {" John 3:16"};
     foreach (string item in Reference)
     Console.WriteLine(item);
    
 // code for scripture text for the verse
-    string[] scriptureVerses = {"For God so loved the world that He gave His only begotten son that whosoever believeth in Him shall not perish but have everlasting life.", "And it came to pass that I, nephi, said unto my Father: I will go and do the things which the Lord hath commandeth, for I know that the Lord giveth no commandments unto the children of men, save he shall prepare a way for them that they may accomplish the thing which he commandeth them."};
-    foreach (string item in scriptureVerses)
+    string[] scriptureVerse = {"For God so loved the world that He gave His only begotten son that whosoever believeth in Him shall not perish but have everlasting life."};
+    foreach (string item in scriptureVerse)
     Console.WriteLine(item);
    
     Console.WriteLine("Press enter to continue or type 'quit' to finish.");
     Console.ReadLine();
     Random random = new Random();
-    int verseIndex = 0;
+    int scriptureVerseIndex = 0;
 
     while (true)
     {
         Console.Clear();
-        if (verseIndex >= scriptureVerses.Length)
+        if (scriptureVerseIndex >=scriptureVerse.Length)
         {
-            Console.WriteLine("You are done will all the scripture verses");
+            Console.WriteLine($"{scriptureVerse}");
             break;
         }
-        
-        string verse = scriptureVerses[verseIndex];
-        Console.WriteLine(verse);
-
+        string verse = scriptureVerse[scriptureVerseIndex];
+        string hiddenWords = HideWords(verse);
+        Console.WriteLine(hiddenWords);
         string input = Console.ReadLine().ToLower();
         if (input == "quit")
         {
-            Console.WriteLine(" You have memorized the scripture verse.");
+            Console.WriteLine("Finish");
             break;
         }
+        
+        scriptureVerseIndex++;
+    }
 
-        verseIndex++;
-
-    } 
 
     }
-    static string HideWordsWithUnderscores(string verse)
+    static string HideWords(string verse)
     {
-        string[] wordsToHide = {"_Son_", "_eternal life_"};
+        string[] wordsToHide = {"_Son_", "_everlasting life_",};
         foreach (var word in wordsToHide)
         {
-            verse =verse.Replace(word, new string('_', word.Length));
+            verse = verse.Replace(word, new string('_', word.Length));
         }
         return verse;
     }
+    
 }
