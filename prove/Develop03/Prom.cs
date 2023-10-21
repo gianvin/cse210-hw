@@ -27,10 +27,15 @@ class Program
             Console.WriteLine("You are done will all the scripture verses");
             break;
         }
+        
         string verse = scriptureVerses[verseIndex];
         Console.WriteLine(verse);
 
         string input = Console.ReadLine().ToLower();
+        if (input == "quit")
+        {
+            Console.WriteLine(" You have memorized the scripture verse.");
+        }
 
     } 
 
