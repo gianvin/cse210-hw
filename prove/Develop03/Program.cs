@@ -13,11 +13,11 @@ class Program
 Console.WriteLine(Reference.ToString()); 
 Console.WriteLine(Scripture.ToString());
 Console.WriteLine("Press enter to continue or type quit to finish");
+Console.ReadLine();
 
 // Hide some words in the verse
 //Scripture.HideWords();
 //Console.WriteLine("___");
 
  }
-
 }
