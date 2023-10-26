@@ -6,7 +6,7 @@ class Mathematics
     private string textbookSection;
     private string problem;
 
- public class Mathematics : Assignment
+ public class HomeworkList : Assignment
  {
     private string _textbookSection ="";
     public string GettextbookSection;

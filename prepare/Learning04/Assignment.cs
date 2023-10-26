@@ -1,16 +1,22 @@
 using System;
 
-class Assignment
+public class Assignment
 {
-    private string studentName;
-    private string topic;
+    private string _studentName;
+    private string _topic;
 
-public string GetstudentName()
+public Assignment(string studentName, string topic)
 {
-   return studentName; 
+  _studentName = studentName; 
+  _topic = topic;
 }
-public string Gettopic()
+public string GetStudentName()
 {
-    return topic;
+    return _studentName;
 }
+public string GetTopic()
+{
+ return _studentName + " - " + _topic;
+}
+
 }
