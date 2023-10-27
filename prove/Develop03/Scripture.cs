@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-public class Scripture
+class Scripture
 {
     //code for fields
     private List<Word> verse = new List<Word>();
@@ -22,6 +22,7 @@ public class Scripture
         parseScripture(scripture);
         this.reference = reference;
         this.wordsToHide = wordsToHide;
+    
     }
     public override string ToString()
     {
