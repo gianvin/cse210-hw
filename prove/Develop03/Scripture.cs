@@ -19,7 +19,7 @@ class Scripture
     }
     public Scripture(string scripture, Reference reference, int wordsToHide)
     {
-        parseScripture(scripture);
+        ParseScripture(scripture);
         this.reference = reference;
         this.wordsToHide = wordsToHide;
     
@@ -55,7 +55,7 @@ class Scripture
         }
     }
     
-    private void parseScripture(string scripture)
+    private void ParseScripture(string scripture)
     {
         List<string> words = scripture.Split(" ").ToList();
         foreach (string word in words)
