@@ -2,30 +2,23 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-class Word
+public class Word
 {
     // code for fields
-    private bool isVisible;
     private string word;
+    private bool isVisible = true;
+    
 
    //code for methods
     public Word(string word)
     {
     this.word = word;
-    this.isVisible = false;
     }
-    public bool GetIsVisible()
-    {
-        return isVisible;
-    }
-
-    public void SetIsVisible(bool isVisible)
-    {
-        this.isVisible = isVisible;
-    }
+    public void hide() {isVisible = false; }
+    public bool GetIsVisible() => isVisible;
     public override string ToString()
     {
-        return isVisible ? word : "__";
+       return isVisible ? word : Regex.Replace(word, "[a-zA-Z]", "_");
     }
 
 }
