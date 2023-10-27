@@ -13,11 +13,11 @@ public class Scripture
 
     private bool allowHiding = false;
 
-    Scripture(string scripture, Reference reference)
+    public Scripture(string scripture, Reference reference)
       : this(scripture, reference, 3)
     {
     }
-   Scripture(string scripture, Reference reference, int wordsToHide)
+    public Scripture(string scripture, Reference reference, int wordsToHide)
     {
         parseScripture(scripture);
         this.reference = reference;

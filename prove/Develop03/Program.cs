@@ -1,5 +1,8 @@
 using System;
-using System;
+using System.ComponentModel;
+using System.Data;
+using System.Net.Quic;
+using System.Reflection.Metadata.Ecma335;
 
 class Program
 {
@@ -7,7 +10,7 @@ class Program
     static string reference = " John 3:16";
     static void Main(string[] args)
     {
-        Scripture scripture = new Scripture(verse, new Reference (reference), 3);
+         Scripture scripture = new Scripture(verse, new Reference(reference), 3);
         string input = "";
 
         do 
