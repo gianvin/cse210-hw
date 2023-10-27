@@ -1,15 +1,19 @@
 using System;
 using System.Reflection.Metadata.Ecma335;
 
-class Writing
+public class Writing
 {
-    private string title;
+    private string _title;
 
-public class WritingInformation : Assignment;
+public  Writing(string studentName, string topic, string title) 
+    : base(studentName, topic)
 {
-    private string _title = "";
-    public string Gettitle;
-    
-    return title;
+   _title = title;
+}
+public string GetWritingInformation()
+{
+    string studentName = GetStudentName();
+
+    return $"{_title} by {studentName}";
 }
 }

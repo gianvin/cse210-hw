@@ -1,20 +1,21 @@
 using System;
 using System.Reflection.Metadata.Ecma335;
 
-class Mathematics
+public class Mathematics
 {
-    private string textbookSection;
-    private string problem;
+    private string _textbookSection;
+    private string _problems;
 
- public class HomeworkList : Assignment
+ public Mathematics(string studentName, string topic, string textbookSection, string problem) 
+     : base(studentName, topic)
  {
-    private string _textbookSection ="";
-    public string GettextbookSection;
-    return _textbookSection;
+     _textbookSection =textbookSection;
+    _problems = problems;
+  
  }
- public void SettextbookSection(string textbookSection)
+ public string GetHomeworkList()
  {
-    _textbookSection = textbookSection;
+    return $"Section {_textbookSection} Problems {_problems}";
  }
 
 }
