@@ -13,11 +13,11 @@ public class Scripture
 
     private bool allowHiding = false;
 
-    public Scripture(string scripture, Reference reference)
+    Scripture(string scripture, Reference reference)
       : this(scripture, reference, 3)
     {
     }
-    public Scripture(string scripture, Reference reference, int wordsToHide)
+   Scripture(string scripture, Reference reference, int wordsToHide)
     {
         parseScripture(scripture);
         this.reference = reference;
@@ -40,13 +40,13 @@ public class Scripture
     public bool isFinished()
     {
         var count = verse.Count(word => word.GetIsVisible());
-        return count = 0;
+        return count == 0;
     }
     private void hideWords()
     {
         List<Word> visibleWords = verse.FindAll(word => word.GetIsVisible());
 
-        for (int i =0 ; i <Math.Min(wordsToHide, visibleWords.Count); i++);
+        for (int i =0 ; i <Math.Min(wordsToHide, visibleWords.Count); i++)
         {
             int index = random.Next(visibleWords.Count);
             visibleWords[index].hide();
@@ -54,9 +54,9 @@ public class Scripture
         }
     }
     
-    private void parseScripture(string Scripture)
+    private void parseScripture(string scripture)
     {
-        List<string> words = scripture.split(" ").ToList();
+        List<string> words = scripture.Split(" ").ToList();
         foreach (string word in words)
         {
             this.verse.Add(new Word(word.Trim()));
