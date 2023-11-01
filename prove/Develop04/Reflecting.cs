@@ -52,6 +52,6 @@ class ReflectingActivity : Activity
         DisplayStartingMessage();
         Console.WriteLine("Consider the following prompt:" + GetRandomPrompt ());
         Console.WriteLine(GetRandomQuestion());
-        DisplayEndingMessage ();
+        DisplayEndingMessage();
     }
 }
