@@ -17,6 +17,7 @@ class Program
         if (userChoice == 1)
             {
                 Console.WriteLine("Welcome to the Breathing Actvity. ");
+                
                 BreathingActivity breathingActivity = new BreathingActivity();
                 breathingActivity.Run();
             }

@@ -16,10 +16,10 @@ class BreathingActivity : Activity
     }
    private void ShowBreatheInMessage(int duration)
    {
-     Console.WriteLine($"Breathe in");
+     Console.WriteLine($"Breathe in...");
    }
    private void  ShowBreatheOutMessage(int duration)
    {
-     Console.WriteLine($"Breathe out");
+     Console.WriteLine($"Now breathe out...");
    }
 }
