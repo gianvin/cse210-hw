@@ -32,7 +32,7 @@ class Activity
     }
     public void DisplayStartingMessage()
     {
-       Console.ReadLine();
+      
     }
     public void DisplayEndingMessage()
     {
@@ -60,5 +60,6 @@ class Activity
             Thread.Sleep(250);
             Console.SetCursorPosition(Console.CursorLeft - 2, Console.CursorTop);
         }
+        Console.WriteLine();
     }
 }

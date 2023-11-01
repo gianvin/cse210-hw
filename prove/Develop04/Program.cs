@@ -16,9 +16,9 @@ class Program
         // Write the if statement
         if (userChoice == 1)
             {
-                Console.WriteLine("Welcome to the Breathing Actvity. ");
-                
+                Console.WriteLine("Welcome to the Breathing Actvity. ");  
                 BreathingActivity breathingActivity = new BreathingActivity();
+                
                 breathingActivity.Run();
             }
         else if (userChoice == 2)
