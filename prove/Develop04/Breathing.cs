@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 class BreathingActivity : Activity
 {
-    public BreathingActivity() : base("Breathe in", "Breathe out")
+    public BreathingActivity() : base("Breathing", "This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.")
     {
 
     }

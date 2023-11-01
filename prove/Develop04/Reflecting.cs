@@ -7,7 +7,7 @@ class ReflectingActivity : Activity
     private List<string> QUESTIONS;
 
     //Methods
-    public ReflectingActivity() : base("This activity will help you reflect on times on your life when you have shown strenght and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.")
+    public ReflectingActivity() : base("Reflecting", "This activity will help you reflect on times on your life when you have shown strenght and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.")
 
     {
         PROMPTS = new List<string>
