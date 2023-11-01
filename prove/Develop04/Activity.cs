@@ -19,7 +19,7 @@ class Activity
     {
 
     }
-    public void DisplayStartingMessgae()
+    public void DisplayStartingMessage()
     {
 
     }
