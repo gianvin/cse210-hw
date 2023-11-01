@@ -40,7 +40,7 @@ class Activity
     }
     private void ShowCountCountdownTime(int seconds)
     {
-        Console.Write("Get ready...");
+        Console.WriteLine("Get ready...");
         for (int i = seconds; i >= 0; i--)
         {
             Console.Write($"{i} ");
