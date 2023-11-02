@@ -28,6 +28,7 @@ class ListActivity : Activity
     {
         DisplayStartingMessage();
         Console.WriteLine("List as many responses you can to the following prompt: " + GetRandomPrompt());
+        Console.Write("");
         DisplayEndingMessage();
 
     }
