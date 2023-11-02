@@ -19,7 +19,7 @@ class Activity
     {
         if (charCount <= 0)
         {
-            Console.WriteLine("Invalid character count");
+            Console.WriteLine();
             return;
         }
         if (charCount > description.Length)
@@ -32,15 +32,21 @@ class Activity
     }
     public void DisplayStartingMessage()
     {
+       Console.Write($"Welcome to {name} activity.");
+       Console.Write($"{description}");
+
+       Console.Write("How long, in seconds would you like for your session?");
       
+       Console.WriteLine("Get ready...");
     }
     public void DisplayEndingMessage()
     {
-       // Console.WriteLine($"Well done")
+       Console.WriteLine("Well done!");
+
+       Console.Write($"You have completed another{durationInSeconds} seconds of the {name}activity");
     }
     private void ShowCountCountdownTime(int seconds)
     {
-        Console.WriteLine("Get ready...");
         for (int i = seconds; i >= 0; i--)
         {
             Console.Write($"{i} ");
