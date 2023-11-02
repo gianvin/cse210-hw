@@ -17,9 +17,27 @@ class BreathingActivity : Activity
    private void ShowBreatheInMessage(int duration)
    {
      Console.WriteLine($"Breathe in...");
+    
+        for (int i = duration; i >= 0; i--)
+        {
+            Console.Write($"{i} ");
+            Thread.Sleep(1000);
+        }
+        Console.WriteLine();
+    
+
    }
    private void  ShowBreatheOutMessage(int duration)
    {
      Console.WriteLine($"Now breathe out...");
+     
+        for (int i = duration; i >= 0; i--)
+        {
+            Console.Write($"{i} ");
+            Thread.Sleep(1000);
+        }
+        Console.WriteLine();
+
+
    }
 }

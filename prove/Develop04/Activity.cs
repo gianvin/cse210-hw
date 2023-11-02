@@ -35,7 +35,7 @@ class Activity
        Console.Write($"Welcome to {name} activity.");
        Console.Write($"{description}");
        Console.ReadLine();
-       Console.Write("How long, in seconds would you like for your session?");
+       Console.Write("How long, in seconds would you like for your session? ");
        Console.ReadLine();
        Console.WriteLine("Get ready...");
     }
@@ -52,7 +52,7 @@ class Activity
             Console.Write($"{i} ");
             Thread.Sleep(1000);
         }
-        Console.WriteLine("Well done!");
+        Console.WriteLine();
     }
     private static void ShowSpinner( int seconds)
     {
