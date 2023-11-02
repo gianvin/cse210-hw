@@ -34,16 +34,16 @@ class Activity
     {
        Console.Write($"Welcome to {name} activity.");
        Console.Write($"{description}");
-
+       Console.ReadLine();
        Console.Write("How long, in seconds would you like for your session?");
-      
+       Console.ReadLine();
        Console.WriteLine("Get ready...");
     }
     public void DisplayEndingMessage()
     {
        Console.WriteLine("Well done!");
 
-       Console.Write($"You have completed another{durationInSeconds} seconds of the {name}activity");
+       Console.Write($"You have completed another {durationInSeconds} seconds of the {name}activity");
     }
     private void ShowCountCountdownTime(int seconds)
     {
