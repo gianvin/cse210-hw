@@ -13,7 +13,7 @@ class ReflectingActivity : Activity
         PROMPTS = new List<string>
         {
             "Think of a time when you stood up for someone else.",
-            "Think of a time when you did something really difficult",
+            "Think of a time when you did something really difficult? ",
             "Think of a time when you help someone in need.",
             "Think of a time when you did something truly helpless. "
         };
@@ -50,8 +50,11 @@ class ReflectingActivity : Activity
     public void Run()
     {;
         DisplayStartingMessage();
-        Console.WriteLine("Consider the following prompt:" + GetRandomPrompt ());
+        Console.WriteLine("Consider the following prompt: " + GetRandomPrompt ());
+        Console.WriteLine();
+        
         Console.WriteLine(GetRandomQuestion());
+        Console.WriteLine();
         DisplayEndingMessage();
     }
 }

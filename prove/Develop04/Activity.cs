@@ -5,11 +5,12 @@ class Activity
 {
     //Fields
     private string description;
-    private int durationInSeconds;
+    protected int durationInSeconds;
 
     private string name;
+    private int seconds;
 
-   // Methods
+    // Methods
     public Activity (string name, string description)
     {
         this.name = name;
@@ -33,15 +34,35 @@ class Activity
     public void DisplayStartingMessage()
     {
        Console.Write($"Welcome to {name} activity.");
+       Console.WriteLine();
+       Console.WriteLine();
+
        Console.Write($"{description}");
-       Console.ReadLine();
+       Console.WriteLine();
+       Console.WriteLine();
+
        Console.Write("How long, in seconds would you like for your session? ");
        Console.ReadLine();
+
        Console.WriteLine("Get ready...");
+
+       string[] spinnerChars = {"|", "/", "-", "\\"};
+       int currentIndex = 0;
+
+        for (int i = 0; i < seconds; i++)
+        {
+            Console.WriteLine("\r" + spinnerChars[currentIndex] + " ");
+            currentIndex = (currentIndex + 1) % spinnerChars.Length;
+            Thread.Sleep(250);
+            Console.SetCursorPosition(Console.CursorLeft - 2, Console.CursorTop);
+        }
+        Console.WriteLine();
+      
     }
     public void DisplayEndingMessage()
     {
        Console.WriteLine("Well done!");
+       Console.WriteLine();
 
        Console.Write($"You have completed another {durationInSeconds} seconds of the {name} activity");
     }
@@ -61,7 +82,7 @@ class Activity
 
         for (int i = 0; i < seconds; i++)
         {
-            Console.Write(spinnerChars[currentIndex] + " ");
+            Console.WriteLine("\r" + spinnerChars[currentIndex] + " ");
             currentIndex = (currentIndex + 1) % spinnerChars.Length;
             Thread.Sleep(250);
             Console.SetCursorPosition(Console.CursorLeft - 2, Console.CursorTop);

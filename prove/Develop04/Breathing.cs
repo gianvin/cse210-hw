@@ -17,11 +17,15 @@ class BreathingActivity : Activity
    private void ShowBreatheInMessage(int duration)
    {
      Console.WriteLine($"Breathe in...");
-    
+     string[] spinnerChars = {"|", "/", "-", "\\"};
+     int currentIndex = 0;
+     
         for (int i = duration; i >= 0; i--)
         {
-            Console.Write($"{i} ");
-            Thread.Sleep(1000);
+           Thread.Sleep(1000);
+           Console.Write("\r" + spinnerChars[currentIndex] + " ");
+           Thread.Sleep(250);
+           currentIndex = (currentIndex + 1) % spinnerChars.Length;
         }
         Console.WriteLine();
     
@@ -30,11 +34,16 @@ class BreathingActivity : Activity
    private void  ShowBreatheOutMessage(int duration)
    {
      Console.WriteLine($"Now breathe out...");
-     
+    
+     string[] spinnerChars = {"|", "/", "-", "\\"};
+     int currentIndex = 0;
+
         for (int i = duration; i >= 0; i--)
         {
-            Console.Write($"{i} ");
             Thread.Sleep(1000);
+            Console.Write("\r" + spinnerChars[currentIndex] + " ");
+            Thread.Sleep(250);
+            currentIndex = (currentIndex + 1) % spinnerChars.Length;
         }
         Console.WriteLine();
 
