@@ -54,23 +54,62 @@ class Activity
         Console.WriteLine();
        }
        Console.WriteLine("Get ready...");
-       Console.Write("+");
+       // Spinner
+       List<string> spinnerStrings = new List<string>();
+       spinnerStrings.Add("|");
+       spinnerStrings.Add("/");
+       spinnerStrings.Add("-");
+       spinnerStrings.Add("\\");
+       spinnerStrings.Add("|");
+       spinnerStrings.Add("/");
+       spinnerStrings.Add("-");
+       spinnerStrings.Add("\\");
 
-       Thread.Sleep(500);
-
-       Console.Write("\b \b");
-       Console.Write("|", "/", "-", "\\");
-
-      
-      
+       foreach (string s in spinnerStrings)
+       {
+        Console.Write(s);
+        Thread.Sleep(1000);
+        Console.Write("\b \b");
+       } 
     }
     public void DisplayEndingMessage()
     {
        Console.WriteLine("Well done!");
+        List<string> spinnerStrings = new List<string>();
+       spinnerStrings.Add("|");
+       spinnerStrings.Add("/");
+       spinnerStrings.Add("-");
+       spinnerStrings.Add("\\");
+       spinnerStrings.Add("|");
+       spinnerStrings.Add("/");
+       spinnerStrings.Add("-");
+       spinnerStrings.Add("\\");
 
-       Console.WriteLine();
+       foreach (string s in spinnerStrings)
+       {
+        Console.Write(s);
+        Thread.Sleep(1000);
+        Console.Write("\b \b");
+       } 
+
        Console.Write($"You have completed another {durationInSeconds} seconds of the {name} activity");
-       
+       Console.WriteLine();
+        _ = new List<string>();
+       spinnerStrings.Add("|");
+       spinnerStrings.Add("/");
+       spinnerStrings.Add("-");
+       spinnerStrings.Add("\\");
+       spinnerStrings.Add("|");
+       spinnerStrings.Add("/");
+       spinnerStrings.Add("-");
+       spinnerStrings.Add("\\");
+
+       foreach (string s in spinnerStrings)
+       {
+        Console.Write(s);
+        Thread.Sleep(1000);
+        Console.Write("\b \b");
+       } 
        
     }
     protected static void ShowCountCountdownTime(int seconds)
