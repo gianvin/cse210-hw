@@ -43,9 +43,9 @@ class Activity
     {
        Console.WriteLine("Well done!");
 
-       Console.Write($"You have completed another {durationInSeconds} seconds of the {name}activity");
+       Console.Write($"You have completed another {durationInSeconds} seconds of the {name} activity");
     }
-    private void ShowCountCountdownTime(int seconds)
+    private static void ShowCountCountdownTime(int seconds)
     {
         for (int i = seconds; i >= 0; i--)
         {
@@ -54,7 +54,7 @@ class Activity
         }
         Console.WriteLine("Well done!");
     }
-    private void ShowSpinner( int seconds)
+    private static void ShowSpinner( int seconds)
     {
         string[] spinnerChars = {"|", "/", "-", "\\"};
         int currentIndex = 0;
