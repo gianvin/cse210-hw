@@ -41,7 +41,7 @@ class Activity
        Console.WriteLine();
 
        Console.Write("How long, in seconds would you like for your session? ");
-       Console.ReadLine();
+       durationInSeconds = int.Parse(Console.ReadLine());
 
        DateTime startTime = DateTime.Now;
        DateTime futureTime = startTime.AddSeconds(5);
