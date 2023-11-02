@@ -13,7 +13,7 @@ class ListActivity : Activity
            "Who are the people you appreciate?",
            "What are personal strenghts of yours?",
            "Who are people that you have helped this week?",
-           "when have you felt the Holy Ghost this month?",
+           "When have you felt the Holy Ghost this month?",
            "Who are some of your personal heroes?" 
         }; 
 

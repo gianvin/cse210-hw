@@ -5,7 +5,7 @@ class Activity
 {
     //Fields
     private string description;
-    protected int durationInSeconds;
+    private int durationInSeconds;
 
     private string name;
     private int seconds;
