@@ -5,10 +5,9 @@ class Activity
 {
     //Fields
     private string description;
-    private int durationInSeconds;
+    protected int durationInSeconds;
 
-    private string name;
-    private int seconds;
+    protected string name;
 
     // Methods
     public Activity (string name, string description)
@@ -44,29 +43,37 @@ class Activity
        Console.Write("How long, in seconds would you like for your session? ");
        Console.ReadLine();
 
-       Console.WriteLine("Get ready...");
+       DateTime startTime = DateTime.Now;
+       DateTime futureTime = startTime.AddSeconds(5);
 
-       string[] spinnerChars = {"|", "/", "-", "\\"};
-       int currentIndex = 0;
-
-        for (int i = 0; i < seconds; i++)
-        {
-            Console.WriteLine("\r" + spinnerChars[currentIndex] + " ");
-            currentIndex = (currentIndex + 1) % spinnerChars.Length;
-            Thread.Sleep(250);
-            Console.SetCursorPosition(Console.CursorLeft - 2, Console.CursorTop);
-        }
+       Thread.Sleep(3000);
+       
+       DateTime currentTime = DateTime.Now;
+       if (currentTime < futureTime)
+       {
         Console.WriteLine();
+       }
+       Console.WriteLine("Get ready...");
+       Console.Write("+");
+
+       Thread.Sleep(500);
+
+       Console.Write("\b \b");
+       Console.Write("|", "/", "-", "\\");
+
+      
       
     }
     public void DisplayEndingMessage()
     {
        Console.WriteLine("Well done!");
-       Console.WriteLine();
 
+       Console.WriteLine();
        Console.Write($"You have completed another {durationInSeconds} seconds of the {name} activity");
+       
+       
     }
-    private static void ShowCountCountdownTime(int seconds)
+    protected static void ShowCountCountdownTime(int seconds)
     {
         for (int i = seconds; i >= 0; i--)
         {
@@ -75,7 +82,7 @@ class Activity
         }
         Console.WriteLine();
     }
-    private static void ShowSpinner( int seconds)
+    protected static void ShowSpinner( int seconds)
     {
         string[] spinnerChars = {"|", "/", "-", "\\"};
         int currentIndex = 0;
@@ -84,7 +91,7 @@ class Activity
         {
             Console.WriteLine("\r" + spinnerChars[currentIndex] + " ");
             currentIndex = (currentIndex + 1) % spinnerChars.Length;
-            Thread.Sleep(250);
+            Thread.Sleep(1000);
             Console.SetCursorPosition(Console.CursorLeft - 2, Console.CursorTop);
         }
         Console.WriteLine();

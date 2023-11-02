@@ -14,7 +14,7 @@ class BreathingActivity : Activity
         ShowBreatheOutMessage(5);
         DisplayEndingMessage();
     }
-   private void ShowBreatheInMessage(int duration)
+   private static void ShowBreatheInMessage(int duration)
    {
      Console.WriteLine($"Breathe in...");
      string[] spinnerChars = {"|", "/", "-", "\\"};
@@ -31,7 +31,7 @@ class BreathingActivity : Activity
     
 
    }
-   private void  ShowBreatheOutMessage(int duration)
+   private static void  ShowBreatheOutMessage(int duration)
    {
      Console.WriteLine($"Now breathe out...");
     
