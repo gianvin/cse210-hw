@@ -7,10 +7,11 @@ class Program
     {
         // Write the menu option
         Console.WriteLine("Menu Options:");
-        Console.WriteLine("1. Start breathing activity");
-        Console.WriteLine("2. Start reflecting activity");
+        Console.WriteLine("1. Start Breathing activity");
+        Console.WriteLine("2. Start Reflecting activity");
         Console.WriteLine("3. Start Listing Actvity");
-        Console.WriteLine("4. Quit");
+        Console.WriteLine("4. Start Tapping Activity");
+        Console.WriteLine("5. Quit");
         Console.Write("Select a choice from the menu: ");
         int userChoice = int.Parse(Console.ReadLine());
         // Write the if statement
@@ -32,8 +33,13 @@ class Program
                 listActivity.Run();
             }
         else if (userChoice == 4)
+            {
+               TappingActivity tappingActivity = new TappingActivity();
+               tappingActivity.Run();
+            }
+        else if (userChoice == 5)
         {
-            
+            Console.ReadLine();
         }
         else
         {
