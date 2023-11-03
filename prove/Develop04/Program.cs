@@ -7,8 +7,8 @@ class Program
     {
         // Write the menu option
         Console.WriteLine("Menu Options:");
-        Console.WriteLine("1. Start Breathing activity");
-        Console.WriteLine("2. Start Reflecting activity");
+        Console.WriteLine("1. Start Breathing Activity");
+        Console.WriteLine("2. Start Reflecting Activity");
         Console.WriteLine("3. Start Listing Actvity");
         Console.WriteLine("4. Start Tapping Activity");
         Console.WriteLine("5. Quit");

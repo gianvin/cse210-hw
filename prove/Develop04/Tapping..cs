@@ -11,7 +11,7 @@ public TappingActivity() : base("Tapping", "This activity will help you relax by
     public void Run()
     {
         DisplayStartingMessage();
-        ShowItsOkayMessage(5);
+        ShowItsOkayMessage(10);
         DisplayEndingMessage();
     }
     private static void ShowItsOkayMessage(int duration)
