@@ -46,7 +46,7 @@ class Activity
        DateTime startTime = DateTime.Now;
        DateTime futureTime = startTime.AddSeconds(5);
 
-       Thread.Sleep(3000);
+       Thread.Sleep(1000);
        
        DateTime currentTime = DateTime.Now;
        if (currentTime < futureTime)
@@ -92,7 +92,7 @@ class Activity
         Console.Write("\b \b");
        } 
 
-       Console.Write($"You have completed another {durationInSeconds} seconds of the {name} activity");
+       Console.Write($"You have completed another {durationInSeconds} seconds of the {name} Activity.");
        Console.WriteLine();
         _ = new List<string>();
        spinnerStrings.Add("|");

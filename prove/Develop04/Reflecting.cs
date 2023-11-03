@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 class ReflectingActivity : Activity
 {
@@ -12,23 +13,25 @@ class ReflectingActivity : Activity
     {
         PROMPTS = new List<string>
         {
-            "Think of a time when you stood up for someone else.",
-            "Think of a time when you did something really difficult? ",
-            "Think of a time when you help someone in need.",
-            "Think of a time when you did something truly helpless. "
+            "---Think of a time when you stood up for someone else.---",
+            "---Think of a time when you did something really difficult?--- ",
+            "---Think of a time when you help someone in need.---",
+            "---Think of a time when you did something truly helpless.--- "
         };
 
+        
         QUESTIONS = new List<string>
         {
-            "why was this experience meaningful to you?",
-            "Have you ever done anything like this before?",
-            "How did you get started?",
-            "How did you feel when it was complete?",
-            "What make this time different than other times when you were not as successful?",
-            "What is your favorite thing about this experience?",
-            "How can you keep this experience in the future?"
+            "> Why was this experience meaningful to you?",
+            "> Have you ever done anything like this before?",
+            "> How did you get started?",
+            "> How did you feel when it was complete?",
+            "> What make this time different than other times when you were not as successful?",
+            "> What is your favorite thing about this experience?",
+            "> How can you keep this experience in the future?"
         
        };
+       
     }
     private List<string> GetQuestions()
     {
@@ -52,8 +55,27 @@ class ReflectingActivity : Activity
         DisplayStartingMessage();
         Console.WriteLine("Consider the following prompt: " + GetRandomPrompt ());
         Console.WriteLine();
-        
+        Console.WriteLine("When you have something in mind, press enter to continue. ");
+        Console.WriteLine();
+        Thread.Sleep(3000);
         Console.WriteLine(GetRandomQuestion());
+
+       List<string> spinnerStrings = new List<string>();
+       spinnerStrings.Add("|");
+       spinnerStrings.Add("/");
+       spinnerStrings.Add("-");
+       spinnerStrings.Add("\\");
+       spinnerStrings.Add("|");
+       spinnerStrings.Add("/");
+       spinnerStrings.Add("-");
+       spinnerStrings.Add("\\");
+
+       foreach (string s in spinnerStrings)
+       {
+        Console.Write(s);
+        Thread.Sleep(1000);
+        Console.Write("\b \b");
+       } 
         Console.WriteLine();
         DisplayEndingMessage();
     }
