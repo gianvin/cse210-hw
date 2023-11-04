@@ -10,6 +10,9 @@ class Program
        Square s1 = new Square ("Blue", 9);
 
        shapes.Add(s1);
+
+       Rectangle s2 = new Rectangle ("Red", 7, 8);
+       shapes.Add(s2);
       
     }
 
