@@ -13,6 +13,9 @@ class Program
 
        Rectangle s2 = new Rectangle ("Red", 7, 8);
        shapes.Add(s2);
+
+       Circle s3 = new Circle ("Yellow" , 10);
+       shapes.Add(s3);
       
     }
 
