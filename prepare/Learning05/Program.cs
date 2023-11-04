@@ -17,6 +17,14 @@ class Program
        Circle s3 = new Circle ("Yellow" , 10);
        shapes.Add(s3);
       
+      foreach (Shape s in shapes)
+      {
+        string color = s.GetColor();
+
+        double area = s.GetArea();
+
+        Console.WriteLine($"The {color} shape has an areaa of {area}.");
+      }
     }
 
 }
