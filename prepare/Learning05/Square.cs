@@ -2,20 +2,17 @@ using System;
 
 public class Square : Shape
 {
-    protected float _side = 0;
-    private float _area = 0;
-
-    public float GetSide()
-    {
-       return _side; 
-    }
-    public void SetSide(float side)
+    
+    private double _side;
+    public Square(string color, double side) : base (color)
     {
         _side = side;
     }
-    public override float GetArea()
+    
+   
+    public override double GetArea()
     {
-        return base.GetArea();
+        return _side * _side;
     }
 
 }
