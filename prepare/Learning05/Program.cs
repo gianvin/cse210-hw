@@ -8,6 +8,8 @@ class Program
        List<Shape> shapes = new List<Shape>(); 
 
        Square s1 = new Square ("Blue", 9);
+
+       shapes.Add(s1);
       
     }
 
