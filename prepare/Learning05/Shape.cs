@@ -1,12 +1,12 @@
 using System;
 
-public class Shape
+public abstract class Shape
 {
-    protected string _color;
+   private string _color;
 
-    public Shape()
+    public Shape(string color)
     {
-
+        _color = color;
     }
     public string GetColor()
     {
@@ -17,8 +17,5 @@ public class Shape
     {
         _color = color;
     }
-    public virtual float GetArea()
-    {
-        return  -1;
-    }
+    public abstract double GetArea();
 }
