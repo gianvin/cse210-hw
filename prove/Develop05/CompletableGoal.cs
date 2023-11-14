@@ -1,7 +1,7 @@
 using System;
 
 
-class CompletableGoal
+public abstract class CompletableGoal
 {
 protected bool isComplete;
 
