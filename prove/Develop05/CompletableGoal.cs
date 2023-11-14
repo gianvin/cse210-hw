@@ -1,10 +1,13 @@
 using System;
 
 
-public abstract class CompletableGoal
+public abstract class CompletableGoal : Goal
 {
-protected bool isComplete;
+    protected bool isComplete;
 
-    protected CompleatableGoal(string name, string description, int points);
+    protected CompletableGoal(string name, string description, int points) : base(name, description, points)
+    {
+        isComplete = false;
+    }
 }
  
