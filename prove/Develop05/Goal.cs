@@ -34,4 +34,8 @@ public abstract class Goal
         return $"{Name}: {description}  ({points} points)";
     }
 
+    internal object GetName()
+    {
+        throw new NotImplementedException();
+    }
 }
