@@ -20,7 +20,7 @@ public abstract class Goal
 
    public Goal(string savedString)
    {
-
+   
    }
    public abstract int RecordEvent();
 
@@ -33,9 +33,5 @@ public abstract class Goal
     {
         return $"{Name}: {description}  ({points} points)";
     }
-
-
-
-
 
 }

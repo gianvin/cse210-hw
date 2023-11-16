@@ -15,7 +15,7 @@ public abstract class ChecklistGoal : CompletableGoal
     }
     public ChecklistGoal(string savedString) : base(savedString)
     {
-
+       
     }
     public override int RecordEvent()
     {

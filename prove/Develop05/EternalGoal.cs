@@ -9,7 +9,7 @@ public abstract class EternalGoal : Goal
     }
     public EternalGoal(string savedString) : base(savedString)
     {
-        
+      
     }
 
 
