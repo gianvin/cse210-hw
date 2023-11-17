@@ -2,6 +2,8 @@ using System;
 
 public abstract class SimpleGoal : CompletableGoal
 {
+    private bool completion;
+
     //methods
     public SimpleGoal(string name, string description, int points) : base(name, description, points)
     {
