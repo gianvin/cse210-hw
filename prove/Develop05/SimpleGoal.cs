@@ -10,7 +10,7 @@ public abstract class SimpleGoal : CompletableGoal
 
     public SimpleGoal(string savedString) : base(savedString)
     {
-      
+      isComplete = completion;
     }
 
     public override int RecordEvent()

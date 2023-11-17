@@ -38,4 +38,8 @@ public abstract class Goal
     {
         throw new NotImplementedException();
     }
+
+    internal class Addnew
+    {
+    }
 }
