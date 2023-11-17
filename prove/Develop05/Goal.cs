@@ -34,17 +34,4 @@ public abstract class Goal
         return $"{Name}: {description}  ({points} points)";
     }
 
-    internal object GetName()
-    {
-        throw new NotImplementedException();
-    }
-
-    internal ReadOnlySpan<char> ToSavedString()
-    {
-        throw new NotImplementedException();
-    }
-
-    internal class Addnew
-    {
-    }
 }
