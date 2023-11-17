@@ -4,7 +4,7 @@ using System.IO;
 
 public class Program
 {
-    
+    private static string filename;
 
     static void Main(string[] args)
     {

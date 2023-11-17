@@ -39,6 +39,11 @@ public abstract class Goal
         throw new NotImplementedException();
     }
 
+    internal ReadOnlySpan<char> ToSavedString()
+    {
+        throw new NotImplementedException();
+    }
+
     internal class Addnew
     {
     }
