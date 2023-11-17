@@ -1,25 +1,27 @@
 using System;
+using System.Runtime.CompilerServices;
 
 public class ChecklistGoal : CompletableGoal
 {
     //fields
-    private int bonusAmount;
+    private int _bonusAmount;
     private int timesCompleted;
+    private int _timesToComplete;
     private int timesToComplete;
+    private int bonusAmount;
+    private int completed;
 
     //methods
     public ChecklistGoal(string name, string description, int points, bool goalCompletion, int timesToComplete, int bonusAmount, int goalNumberCompleted) : base(name, description, points)
     {
-        this.timesToComplete = timesToComplete;
-        this.bonusAmount = bonusAmount;
+        _bonusAmount = bonusAmount;
+       timesCompleted = 0;
+       _timesToComplete = timesToComplete;
+       _timesToComplete = completed;
     }
     public ChecklistGoal(string savedString) : base(savedString)
     {
        
-    }
-
-    public ChecklistGoal(string name, string description, int points, int bonusAmount, int timesToComplete) : base(name, description, points)
-    {
     }
 
     public override int RecordEvent()
@@ -28,9 +30,11 @@ public class ChecklistGoal : CompletableGoal
       if (timesCompleted == timesToComplete)
       {
         isComplete = true;
-        points += bonusAmount;
+       return bonusAmount + points;
+      }else{
+        return points;
       }
-      return bonusAmount;
+      
     }
 
 
