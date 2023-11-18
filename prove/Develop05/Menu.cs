@@ -6,7 +6,7 @@ public class Menu
 {
     protected int _score;
 
-    private int userChoice;
+    protected int userChoice;
 
     public Menu()
     {
