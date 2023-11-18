@@ -184,7 +184,6 @@ class Program
               int choice = 0;
               choice = int.Parse(Console.ReadLine());
               int previousScore = _score;
-              Menu.SetScore(previousScore + goals[choice-1].RecordEvent());
               int currentScore = _score;
               Console.WriteLine($"Congratulations! You have earned {currentScore-previousScore} points");
               Console.WriteLine($"You now have {_score} points.");
