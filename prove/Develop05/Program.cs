@@ -97,7 +97,7 @@ class Program
 
                 foreach (Goal goal in goals)
                 {
-                    outputFile.WriteLine(goal.ToSavedString());
+                    outputFile.WriteLine(goal.ToSaveString());
                 }
 
               }
@@ -131,7 +131,7 @@ class Program
                     switch (goalType){
                         case "SimpleGoal":
                           goalCompletion = bool.Parse(parts[4]);
-                          goals.Add(new SimpleGoal(goalName, goalDescription, goalPoints, goalCompletion));
+                          goals.Add(new SimpleGoal(goalName, goalDescription, goalPoints));
                           break;
 
                         case "EternalGoal":
