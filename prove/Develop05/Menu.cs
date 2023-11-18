@@ -33,10 +33,8 @@ public class Menu
        Console.WriteLine("3. Checklist Goal");
        Console.Write("Which type of Goal would you like to create? "); 
     }
-    public void UpdateUserChoice()
-    {
-        int userChoice = int.Parse(Console.ReadLine());
-    }
+   
+    
     public int GetUserChoice()
     {
         return userChoice;
