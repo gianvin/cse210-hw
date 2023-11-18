@@ -22,16 +22,23 @@ public abstract class Goal
    {
    
    }
-   public abstract int RecordEvent();
+   public string GetName()
+   {
+    return Name;
+   }
+   public virtual int RecordEvent()
+   {
+     return points;
+   }
 
    public virtual string ToSaveString()
    {
-      return $"{Name},{description}, {points}";
+      return $"{GetType().Name}:{description},{points}";
    }
 
     public override string ToString()
     {
-        return $"{Name}: {description}  ({points} points)";
+        return $"[]{Name}: {description}";
     }
 
 }

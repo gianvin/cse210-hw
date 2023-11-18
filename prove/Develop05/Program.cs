@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel.Design;
 using System.IO;
 
-public class Program
+class Program
 {
     
 
@@ -106,7 +106,7 @@ public class Program
 
               Console.Write("What is the filename for the goal file? ");
               fileName = Console.ReadLine();
-              string[] lines = System.IO.File.ReadAllLines(filename);
+              string[] lines = System.IO.File.ReadAllLines(fileName);
               i = 1;
 
               foreach (string line in lines)

@@ -22,5 +22,15 @@ public abstract class CompletableGoal : Goal
     {
         return $"{GetType().Name}:{name},{description}, {points},{isComplete}";
     }
+    public override string ToString()
+    {
+      if(isComplete)
+      {
+        return $"[X] {name} ({description})";
+      }else
+      {
+        return $"[] {name} ({description})";
+      }
+    }
 }
  

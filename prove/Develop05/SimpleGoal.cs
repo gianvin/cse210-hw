@@ -1,6 +1,6 @@
 using System;
 
-public abstract class SimpleGoal : CompletableGoal
+public class SimpleGoal : CompletableGoal
 {
     //methods
     public SimpleGoal(string name, string description, int points) : base(name, description, points)

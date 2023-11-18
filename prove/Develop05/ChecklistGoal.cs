@@ -4,9 +4,9 @@ using System.Runtime.CompilerServices;
 public class ChecklistGoal : CompletableGoal
 {
     //fields
-    private int _bonusAmount;
+    
     private int timesCompleted;
-    private int _timesToComplete;
+   
     private int timesToComplete;
     private int bonusAmount;
     private int completed;
@@ -14,10 +14,10 @@ public class ChecklistGoal : CompletableGoal
     //methods
     public ChecklistGoal(string name, string description, int points, bool goalCompletion, int timesToComplete, int bonusAmount, int goalNumberCompleted) : base(name, description, points)
     {
-        _bonusAmount = bonusAmount;
-       timesCompleted = 0;
-       _timesToComplete = timesToComplete;
-       _timesToComplete = completed;
+        this.bonusAmount = bonusAmount;
+        timesCompleted = 0;
+        this.timesToComplete = timesToComplete;
+        this.timesToComplete = completed;
     }
     public ChecklistGoal(string savedString) : base(savedString)
     {
@@ -36,7 +36,22 @@ public class ChecklistGoal : CompletableGoal
       }
       
     }
+    public override string ToSaveString()
+    {
+      return $"{GetType().Name}:{name},{description},{points}, {isComplete}, {bonusAmount}, {timesToComplete},{timesCompleted}";
+    }
 
+    public override string Tostring()
+    {
+       if (isComplete)
+       {
+        return $"[X] {name} [{description})--Currently Completed:{timesCompleted}/{timesToComplete}";
+
+       }else
+       {
+        return $"[]{name} ({description})--CurrentlyCompleted: {timesCompleted}/{timesToComplete}";
+       } 
+    }
 
 
 }
