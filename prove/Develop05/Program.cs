@@ -32,14 +32,12 @@ class Program
      int userChoice = int.Parse(Console.ReadLine());
         
         do{
-            
-      
-          do{
-          }while(userChoice < 1 || userChoice > 6);
+           }while(userChoice < 1 || userChoice > 6);
             
            switch(userChoice)
           
-          {
+          {  
+         
             case 1: //create new Goal
                Console.WriteLine("The types of Goals are:");
                Console. WriteLine("1. Simple Goal");
@@ -98,7 +96,7 @@ class Program
               }
               break;
 
-              case 2: //list goals
+            case 2: //list goals
               Console.WriteLine("The goals are:");
               foreach(Goal goal in goals)
               {
@@ -132,7 +130,7 @@ class Program
               {
                 if (i == 1)
                 {
-                    Menu.SetScore(int.Parse(line));
+                    return;
 
                 }else{
                     string[] parts = line.Split(',', ':');
@@ -196,9 +194,8 @@ class Program
 
               break;
 
-
           }
             
-    }while (userChoice != 6);
+    while (userChoice != 6);
     }
 }
