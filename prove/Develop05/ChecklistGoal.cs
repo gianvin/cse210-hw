@@ -5,10 +5,10 @@ public class ChecklistGoal : CompletableGoal
 {
     //fields
     
-    private int timesCompleted;
+    protected int timesCompleted;
    
-    private int timesToComplete;
-    private int bonusAmount;
+    protected int timesToComplete;
+    protected int bonusAmount;
 
 
     //methods

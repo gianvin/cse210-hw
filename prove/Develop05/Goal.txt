@@ -1,0 +1,4 @@
+0
+SimpleGoal:,Prepare atalk and speak in sacrament meeting when assigned., 100,False
+EternalGoal:Study the scriptures everyday for 10 minutes.,50
+ChecklistGoal:,Go to the temple and perform any ordinance,50, False, 500, 3,0

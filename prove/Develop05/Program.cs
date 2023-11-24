@@ -2,11 +2,14 @@ using System;
 using System.Collections;
 using System.ComponentModel.Design;
 using System.IO;
+using System.Runtime.CompilerServices;
 
 class Program
 {
      private static int _score;
-     public void SetScore(int score)
+
+     private static List<Goal>goals = new List<Goal>();
+     public static void SetScore(int score)
     {
         _score = score;
     }
@@ -16,9 +19,11 @@ class Program
       return _score;  
     }
     static void Main(string[] args)
-    {
-
-     List<Goal>goals = new List<Goal>();
+ {
+     int userChoice;
+      string fileName;
+              int i;
+    do{
      Console.WriteLine($"You have {_score} points");
      Console.WriteLine();
      Console.WriteLine("Menu Options");
@@ -28,34 +33,33 @@ class Program
      Console.WriteLine(" 4. Load Goals");
      Console.WriteLine(" 5. Record Event");
      Console.WriteLine(" 6. Quit");
+     
      Console.Write("Select a choice from the menu: "); 
-     int userChoice = int.Parse(Console.ReadLine());
-        
-        do{
-           }while(userChoice < 1 || userChoice > 6);
-            
-           switch(userChoice)
-          
-          {  
-         
-            case 1: //create new Goal
+     userChoice = int.Parse(Console.ReadLine());
+   
+       
+      switch(userChoice)
+    {
+              case 1: //create new Goal
                Console.WriteLine("The types of Goals are:");
                Console. WriteLine("1. Simple Goal");
                Console.WriteLine("2. Eternal Goal");
                Console.WriteLine("3. Checklist Goal");
-               Console.Write("Which type of Goal would you like to create? "); 
-               int goalChoice = int.Parse(Console.ReadLine());
+               
+               int goalChoice;
+               
             do{
-              }while (goalChoice < 1 || goalChoice > 3);
-
+                Console.Write("Which type of Goal would you like to create? "); 
+                goalChoice = int.Parse(Console.ReadLine());
+              
+            
               string name;
               string description;
               int points;
               int bonusAmount;
               int timesToComplete;
-              string fileName;
-              int i;
-
+             
+            
               switch(goalChoice)
               {
                 case 1: //simple goal
@@ -68,7 +72,8 @@ class Program
 
                 goals.Add(new SimpleGoal(name, description, points));
                 break;
-
+              
+              
                 case 2: // eternal goal
                 Console.Write("What is the name of your goal? "); 
                 name = Console.ReadLine();
@@ -79,6 +84,8 @@ class Program
 
                 goals.Add(new EternalGoal(name, description, points));
                 break;
+        
+
                 case 3: //checklist goal
                  Console.Write("What is the name of your goal? "); 
                 name = Console.ReadLine();
@@ -94,6 +101,7 @@ class Program
                 break;
 
               }
+              }while (goalChoice < 1 || goalChoice > 3);
               break;
 
             case 2: //list goals
@@ -105,7 +113,7 @@ class Program
               break;
 
               case 3: // save goals
-              Console.Write("Whatis the filename for the goal file? ");
+              Console.Write("What is the filename for the goal file? ");
               fileName = Console.ReadLine();
 
               using (StreamWriter outputFile = new StreamWriter(fileName))
@@ -130,7 +138,7 @@ class Program
               {
                 if (i == 1)
                 {
-                    return;
+                    continue;
 
                 }else{
                     string[] parts = line.Split(',', ':');
@@ -161,14 +169,14 @@ class Program
                         goalNumberToCompletion = int.Parse(parts[6]);
                         goalNumberCompleted = int.Parse(parts[7]);
                         goals.Add(new ChecklistGoal(goalName, goalDescription, goalPoints, goalCompletion, goalBonusAmount, goalNumberToCompletion, goalNumberCompleted));
-
+                    
                          break;      
                     }
                 }
                 i++;
               }
-              break;
-
+               break;
+    
               case 5: //record event
 
               Console.WriteLine("The goals are:");
@@ -181,9 +189,9 @@ class Program
                 i++;
               }
               Console.Write("Which goal did you accomplish? ");
-              int choice = 0;
-              choice = int.Parse(Console.ReadLine());
+              goalChoice = int.Parse(Console.ReadLine());
               int previousScore = _score;
+             SetScore(previousScore + goals[goalChoice - 1].RecordEvent());
               int currentScore = _score;
               Console.WriteLine($"Congratulations! You have earned {currentScore-previousScore} points");
               Console.WriteLine($"You now have {_score} points.");
@@ -193,8 +201,9 @@ class Program
 
               break;
 
+          
           }
-            
-    while (userChoice != 6);
+          }while (userChoice != 6);  
+      
     }
 }
