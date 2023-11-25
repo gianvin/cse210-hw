@@ -5,7 +5,7 @@ public abstract class CompletableGoal : Goal
 {
     //fields
     protected bool isComplete;
-    protected object name;
+    protected new object name;
 
     //methods
 
@@ -26,7 +26,11 @@ public abstract class CompletableGoal : Goal
     {
       if(isComplete)
       {
-        return $"[X] {name} ({description})";
+        return $"{GetType().Name}:{name},{description}, {points}, {isComplete}";
+       
+      }else
+       if(isComplete)
+      {return $"[X] {name} ({description})";
       }else
       {
         return $"[] {name} ({description})";

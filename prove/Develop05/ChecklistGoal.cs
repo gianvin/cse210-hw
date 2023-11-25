@@ -52,12 +52,12 @@ public class ChecklistGoal : CompletableGoal
     
        if(isComplete)
        {
-        return $"[X] {Name} ({description}) -- Currently Completed: {timesCompleted}/{timesToComplete}";
+        return $"[X] {name} ({description}) -- Currently Completed: {timesCompleted}/{timesToComplete}";
 
        }
        else
        {
-        return $"[]{Name} ({description}) -- CurrentlyCompleted: {timesCompleted}/{timesToComplete}";
+         return $"[]{name} ({description}) -- CurrentlyCompleted: {timesCompleted}/{timesToComplete}";
        } 
     }
 

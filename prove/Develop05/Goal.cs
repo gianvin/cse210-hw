@@ -7,13 +7,13 @@ public abstract class Goal
 
    protected int points;
 
-   public string Name {get; set;}
+   public string name {get; private set;}
 
    //methods
 
    public Goal(string name, string description, int points)
    {
-    this.Name = name;
+    this.name = name;
     this.description = description;
     this.points = points;
    }
@@ -24,7 +24,7 @@ public abstract class Goal
    }
    public string GetName()
    {
-    return Name;
+    return name;
    }
    public virtual int RecordEvent()
    {
@@ -38,7 +38,7 @@ public abstract class Goal
 
     public override string ToString()
     {
-        return $"[]{Name}: {description}";
+        return $"[]{name}: {description}";
     }
 
 }

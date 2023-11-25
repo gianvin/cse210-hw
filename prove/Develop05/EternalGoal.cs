@@ -12,8 +12,4 @@ public class EternalGoal : Goal
       
     }
 
-    public override int RecordEvent()
-    {
-        throw new NotImplementedException();
-    }
 }

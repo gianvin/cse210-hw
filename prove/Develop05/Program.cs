@@ -8,7 +8,7 @@ class Program
 {
   private static int _score;
 
-  private static List<Goal> goals = new List<Goal>();
+  private static List<Goal>goals = new List<Goal>();
   public static void SetScore(int score)
   {
     _score = score;
@@ -93,7 +93,7 @@ class Program
                 name = Console.ReadLine();
                 Console.Write("What is a short description of it? ");
                 description = Console.ReadLine();
-                Console.Write("what is the amount of points associated with it? ");
+                Console.Write("What is the amount of points associated with it? ");
                 points = int.Parse(Console.ReadLine());
                 Console.Write("How many times does this goal need to be accomplished for a bonus? ");
                 timesToComplete = int.Parse(Console.ReadLine());
@@ -184,22 +184,21 @@ class Program
 
         case 5: //record event
 
-          Console.WriteLine("The goals are:");
+    Console.WriteLine("The goals are:");
 
-          i = 1;
+    i = 1;
 
-          foreach (Goal goal in goals)
-          {
-            Console.WriteLine($"{i}.{goal.GetName()}");
-            i++;
-          }
+       foreach (Goal goal in goals)
+       {
+         Console.WriteLine($"{i}.{goal.GetName()}");
+         i++;
+       }
           Console.Write("Which goal did you accomplish? ");
           goalChoice = int.Parse(Console.ReadLine());
-          int previousScore = _score;
+          int currentScore = goals[goalChoice - 1].RecordEvent();
+          _score += currentScore;
           
-          SetScore(previousScore + goals[goalChoice - 1].RecordEvent());
-          int currentScore = _score;
-          Console.WriteLine($"Congratulations! You have earned {currentScore - previousScore} points");
+          Console.WriteLine($"Congratulations! You have earned {currentScore} points");
           Console.WriteLine($"You now have {_score} points.");
           break;
 
