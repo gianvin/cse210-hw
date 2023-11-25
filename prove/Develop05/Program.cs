@@ -196,6 +196,7 @@ class Program
           Console.Write("Which goal did you accomplish? ");
           goalChoice = int.Parse(Console.ReadLine());
           int previousScore = _score;
+          
           SetScore(previousScore + goals[goalChoice - 1].RecordEvent());
           int currentScore = _score;
           Console.WriteLine($"Congratulations! You have earned {currentScore - previousScore} points");

@@ -1,0 +1,522 @@
+diff --git a/prove/Develop05/ChecklistGoal.cs b/prove/Develop05/ChecklistGoal.cs
+index 83ea274..6e7e524 100644
+--- a/prove/Develop05/ChecklistGoal.cs
++++ b/prove/Develop05/ChecklistGoal.cs
+@@ -52,12 +52,12 @@ public class ChecklistGoal : CompletableGoal
+     
+        if(isComplete)
+        {
+-        return $"[X] {Name} ({description}) -- Currently Completed: {timesCompleted}/{timesToComplete}";
++        return $"[X] {name} ({description}) -- Currently Completed: {timesCompleted}/{timesToComplete}";
+ 
+        }
+        else
+        {
+-        return $"[]{Name} ({description}) -- CurrentlyCompleted: {timesCompleted}/{timesToComplete}";
++        return $"[ ]{name} ({description}) -- CurrentlyCompleted: {timesCompleted}/{timesToComplete}";
+        } 
+     }
+ 
+diff --git a/prove/Develop05/CompletableGoal.cs b/prove/Develop05/CompletableGoal.cs
+index ede2dd1..c47ccf0 100644
+--- a/prove/Develop05/CompletableGoal.cs
++++ b/prove/Develop05/CompletableGoal.cs
+@@ -3,34 +3,33 @@ using System;
+ 
+ public abstract class CompletableGoal : Goal
+ {
+-    //fields
+-    protected bool isComplete;
+-    protected object name;
++  //fields
++  protected bool isComplete;
+ 
+-    //methods
++  //methods
+ 
+-    protected CompletableGoal(string name, string description, int points) : base(name, description, points)
+-    {
+-        isComplete = false;
+-    }
++  protected CompletableGoal(string name, string description, int points) : base(name, description, points)
++  {
++    isComplete = false;
++  }
+ 
+-    protected CompletableGoal(string savedString) : base(savedString)
+-    {
+-        
+-    }
+-    public override string ToSaveString()
++  protected CompletableGoal(string savedString) : base(savedString)
++  {
++
++  }
++  public override string ToSaveString()
++  {
++    return $"{GetType().Name}:{name},{description}, {points},{isComplete}";
++  }
++  public override string ToString()
++  {
++    if (isComplete)
+     {
+-        return $"{GetType().Name}:{name},{description}, {points},{isComplete}";
++      return $"[X] {name} ({description})";
+     }
+-    public override string ToString()
++    else
+     {
+-      if(isComplete)
+-      {
+-        return $"[X] {name} ({description})";
+-      }else
+-      {
+-        return $"[] {name} ({description})";
+-      }
++      return $"[ ] {name} ({description})";
+     }
++  }
+ }
+- 
+\ No newline at end of file
+diff --git a/prove/Develop05/EternalGoal.cs b/prove/Develop05/EternalGoal.cs
+index 92f0555..7323b8f 100644
+--- a/prove/Develop05/EternalGoal.cs
++++ b/prove/Develop05/EternalGoal.cs
+@@ -11,9 +11,4 @@ public class EternalGoal : Goal
+     {
+       
+     }
+-
+-    public override int RecordEvent()
+-    {
+-        throw new NotImplementedException();
+-    }
+ }
+\ No newline at end of file
+diff --git a/prove/Develop05/Goal.cs b/prove/Develop05/Goal.cs
+index 0e112e9..3db52aa 100644
+--- a/prove/Develop05/Goal.cs
++++ b/prove/Develop05/Goal.cs
+@@ -7,13 +7,13 @@ public abstract class Goal
+ 
+    protected int points;
+ 
+-   public string Name {get; set;}
++   public string name {get;  private set;}
+ 
+    //methods
+ 
+    public Goal(string name, string description, int points)
+    {
+-    this.Name = name;
++    this.name = name;
+     this.description = description;
+     this.points = points;
+    }
+@@ -24,7 +24,7 @@ public abstract class Goal
+    }
+    public string GetName()
+    {
+-    return Name;
++    return name;
+    }
+    public virtual int RecordEvent()
+    {
+@@ -38,7 +38,7 @@ public abstract class Goal
+ 
+     public override string ToString()
+     {
+-        return $"[]{Name}: {description}";
++        return $"[ ] {name}: {description}";
+     }
+ 
+ }
+\ No newline at end of file
+diff --git a/prove/Develop05/Program.cs b/prove/Develop05/Program.cs
+index 1e9287e..ed046bd 100644
+--- a/prove/Develop05/Program.cs
++++ b/prove/Develop05/Program.cs
+@@ -6,63 +6,57 @@ using System.Runtime.CompilerServices;
+ 
+ class Program
+ {
+-     private static int _score;
++  private static int _score;
+ 
+-     private static List<Goal>goals = new List<Goal>();
+-     public static void SetScore(int score)
+-    {
+-        _score = score;
+-    }
++  private static List<Goal> goals = new List<Goal>();
+ 
+-    public int GetScore()
+-    {
+-      return _score;  
+-    }
+-    static void Main(string[] args)
+- {
+-     int userChoice;
+-      string fileName;
+-              int i;
+-    do{
+-     Console.WriteLine($"You have {_score} points");
+-     Console.WriteLine();
+-     Console.WriteLine("Menu Options");
+-     Console.WriteLine(" 1. Create New Goal");
+-     Console.WriteLine(" 2. List Goals");
+-     Console.WriteLine(" 3. Save Goals ");
+-     Console.WriteLine(" 4. Load Goals");
+-     Console.WriteLine(" 5. Record Event");
+-     Console.WriteLine(" 6. Quit");
+-     
+-     Console.Write("Select a choice from the menu: "); 
+-     userChoice = int.Parse(Console.ReadLine());
+-   
+-       
+-      switch(userChoice)
++  static void Main(string[] args)
++  {
++    int userChoice;
++    string fileName;
++    int i;
++    do
+     {
+-              case 1: //create new Goal
+-               Console.WriteLine("The types of Goals are:");
+-               Console. WriteLine("1. Simple Goal");
+-               Console.WriteLine("2. Eternal Goal");
+-               Console.WriteLine("3. Checklist Goal");
+-               
+-               int goalChoice;
+-               
+-            do{
+-                Console.Write("Which type of Goal would you like to create? "); 
+-                goalChoice = int.Parse(Console.ReadLine());
+-              
+-            
+-              string name;
+-              string description;
+-              int points;
+-              int bonusAmount;
+-              int timesToComplete;
+-             
+-            
+-              switch(goalChoice)
+-              {
+-                case 1: //simple goal
++      Console.WriteLine($"You have {_score} points");
++      Console.WriteLine();
++      Console.WriteLine("Menu Options");
++      Console.WriteLine(" 1. Create New Goal");
++      Console.WriteLine(" 2. List Goals");
++      Console.WriteLine(" 3. Save Goals ");
++      Console.WriteLine(" 4. Load Goals");
++      Console.WriteLine(" 5. Record Event");
++      Console.WriteLine(" 6. Quit");
++
++      Console.Write("Select a choice from the menu: ");
++      userChoice = int.Parse(Console.ReadLine());
++
++
++      switch (userChoice)
++      {
++        case 1: //create new Goal
++          Console.WriteLine("The types of Goals are:");
++          Console.WriteLine("1. Simple Goal");
++          Console.WriteLine("2. Eternal Goal");
++          Console.WriteLine("3. Checklist Goal");
++
++          int goalChoice;
++
++          do
++          {
++            Console.Write("Which type of Goal would you like to create? ");
++            goalChoice = int.Parse(Console.ReadLine());
++
++
++            string name;
++            string description;
++            int points;
++            int bonusAmount;
++            int timesToComplete;
++
++
++            switch (goalChoice)
++            {
++              case 1: //simple goal
+                 Console.Write("What is the name of your goal? ");
+                 name = Console.ReadLine();
+                 Console.Write("What is a short description of it? ");
+@@ -72,10 +66,10 @@ class Program
+ 
+                 goals.Add(new SimpleGoal(name, description, points));
+                 break;
+-              
+-              
+-                case 2: // eternal goal
+-                Console.Write("What is the name of your goal? "); 
++
++
++              case 2: // eternal goal
++                Console.Write("What is the name of your goal? ");
+                 name = Console.ReadLine();
+                 Console.Write("What is a short description of it? ");
+                 description = Console.ReadLine();
+@@ -84,10 +78,10 @@ class Program
+ 
+                 goals.Add(new EternalGoal(name, description, points));
+                 break;
+-        
+ 
+-                case 3: //checklist goal
+-                 Console.Write("What is the name of your goal? "); 
++
++              case 3: //checklist goal
++                Console.Write("What is the name of your goal? ");
+                 name = Console.ReadLine();
+                 Console.Write("What is a short description of it? ");
+                 description = Console.ReadLine();
+@@ -100,110 +94,112 @@ class Program
+                 goals.Add(new ChecklistGoal(name, description, points, bonusAmount, timesToComplete));
+                 break;
+ 
+-              }
+-              }while (goalChoice < 1 || goalChoice > 3);
+-              break;
++            }
++          } while (goalChoice < 1 || goalChoice > 3);
++          break;
+ 
+-            case 2: //list goals
+-              Console.WriteLine("The goals are:");
+-              foreach(Goal goal in goals)
+-              {
+-                Console.WriteLine(goal.ToString());
+-              }
+-              break;
++        case 2: //list goals
++          Console.WriteLine("The goals are:");
++          foreach (Goal goal in goals)
++          {
++            Console.WriteLine(goal.ToString());
++          }
++          break;
+ 
+-              case 3: // save goals
+-              Console.Write("What is the filename for the goal file? ");
+-              fileName = Console.ReadLine();
++        case 3: // save goals
++          Console.Write("What is the filename for the goal file? ");
++          fileName = Console.ReadLine();
+ 
+-              using (StreamWriter outputFile = new StreamWriter(fileName))
+-              {
+-                outputFile.WriteLine($"{_score}");
++          using (StreamWriter outputFile = new StreamWriter(fileName))
++          {
++            outputFile.WriteLine($"{_score}");
+ 
+-                foreach (Goal goal in goals)
+-                {
+-                    outputFile.WriteLine(goal.ToSaveString());
+-                }
++            foreach (Goal goal in goals)
++            {
++              outputFile.WriteLine(goal.ToSaveString());
++            }
+ 
++          }
++          break;
++        case 4: //load goals
++
++          Console.Write("What is the filename for the goal file? ");
++          fileName = Console.ReadLine();
++          string[] lines = System.IO.File.ReadAllLines(fileName);
++          i = 1;
++
++          foreach (string line in lines)
++          {
++            if (i == 1)
++            {
++              continue;
++
++            }
++            else
++            {
++              string[] parts = line.Split(',', ':');
++
++              string goalType = parts[0];
++              string goalName = parts[1];
++              string goalDescription = parts[2];
++              int goalPoints = int.Parse(parts[3]);
++              bool goalCompletion;
++              int goalBonusAmount;
++              int goalNumberToCompletion;
++              int goalNumberCompleted;
++
++
++              switch (goalType)
++              {
++                case "SimpleGoal":
++                  goalCompletion = bool.Parse(parts[4]);
++                  goals.Add(new SimpleGoal(goalName, goalDescription, goalPoints));
++                  break;
++
++                case "EternalGoal":
++                  goals.Add(new EternalGoal(goalName, goalDescription, goalPoints));
++                  break;
++
++                case "CheckListGoal":
++                  goalCompletion = bool.Parse(parts[4]);
++                  goalBonusAmount = int.Parse(parts[5]);
++                  goalNumberToCompletion = int.Parse(parts[6]);
++                  goalNumberCompleted = int.Parse(parts[7]);
++                  goals.Add(new ChecklistGoal(goalName, goalDescription, goalPoints, goalCompletion, goalBonusAmount, goalNumberToCompletion, goalNumberCompleted));
++
++                  break;
+               }
+-              break;
+-              case 4: //load goals
++            }
++            i++;
++          }
++          break;
+ 
+-              Console.Write("What is the filename for the goal file? ");
+-              fileName = Console.ReadLine();
+-              string[] lines = System.IO.File.ReadAllLines(fileName);
+-              i = 1;
++        case 5: //record event
+ 
+-              foreach (string line in lines)
+-              {
+-                if (i == 1)
+-                {
+-                    continue;
+-
+-                }else{
+-                    string[] parts = line.Split(',', ':');
+-
+-                    string goalType = parts[0];
+-                    string goalName = parts[1];
+-                    string goalDescription = parts[2];
+-                    int goalPoints = int.Parse(parts[3]);
+-                    bool goalCompletion;
+-                    int goalBonusAmount;
+-                    int goalNumberToCompletion;
+-                    int goalNumberCompleted;
+-
+-
+-                    switch (goalType){
+-                        case "SimpleGoal":
+-                          goalCompletion = bool.Parse(parts[4]);
+-                          goals.Add(new SimpleGoal(goalName, goalDescription, goalPoints));
+-                          break;
+-
+-                        case "EternalGoal":
+-                        goals.Add(new EternalGoal(goalName, goalDescription, goalPoints ));
+-                          break;
+-
+-                        case "CheckListGoal":
+-                        goalCompletion = bool.Parse(parts[4]);
+-                        goalBonusAmount = int.Parse(parts[5]);
+-                        goalNumberToCompletion = int.Parse(parts[6]);
+-                        goalNumberCompleted = int.Parse(parts[7]);
+-                        goals.Add(new ChecklistGoal(goalName, goalDescription, goalPoints, goalCompletion, goalBonusAmount, goalNumberToCompletion, goalNumberCompleted));
+-                    
+-                         break;      
+-                    }
+-                }
+-                i++;
+-              }
+-               break;
+-    
+-              case 5: //record event
++          Console.WriteLine("The goals are:");
+ 
+-              Console.WriteLine("The goals are:");
++          i = 1;
+ 
+-              i = 1;
+-              
+-              foreach (Goal goal in goals)
+-              {
+-                Console.WriteLine($"{i}.{goal.GetName()}");
+-                i++;
+-              }
+-              Console.Write("Which goal did you accomplish? ");
+-              goalChoice = int.Parse(Console.ReadLine());
+-              int previousScore = _score;
+-             SetScore(previousScore + goals[goalChoice - 1].RecordEvent());
+-              int currentScore = _score;
+-              Console.WriteLine($"Congratulations! You have earned {currentScore-previousScore} points");
+-              Console.WriteLine($"You now have {_score} points.");
+-              break;
++          foreach (Goal goal in goals)
++          {
++            Console.WriteLine($"{i}.{goal.GetName()}");
++            i++;
++          }
++          Console.Write("Which goal did you accomplish? ");
++          goalChoice = int.Parse(Console.ReadLine());
++          int currentScore = goals[goalChoice - 1].RecordEvent();
++          _score += currentScore;
++          Console.WriteLine($"Congratulations! You have earned {currentScore} points");
++          Console.WriteLine($"You now have {_score} points.");
++          break;
+ 
+-              case 6: //quit the program
++        case 6: //quit the program
+ 
+-              break;
++          break;
+ 
+-          
+-          }
+-          }while (userChoice != 6);  
+-      
+-    }
++
++      }
++    } while (userChoice != 6);
++
++  }
+ }
+\ No newline at end of file
+diff --git a/prove/Develop05/SimpleGoal.cs b/prove/Develop05/SimpleGoal.cs
+index fbbbdf5..692ff0a 100644
+--- a/prove/Develop05/SimpleGoal.cs
++++ b/prove/Develop05/SimpleGoal.cs
+@@ -5,18 +5,24 @@ public class SimpleGoal : CompletableGoal
+     //methods
+     public SimpleGoal(string name, string description, int points) : base(name, description, points)
+     {
+-       
++
+     }
+ 
+     public SimpleGoal(string savedString) : base(savedString)
+     {
+-      
++
+     }
+ 
+     public override int RecordEvent()
+     {
+-     return 0;    
++        if (!isComplete)
++        {
++            isComplete = true;
++            return base.RecordEvent();
++        }
++        else
++        {
++            return 0;
++        }
+     }
+-
+-
+ }
+\ No newline at end of file
