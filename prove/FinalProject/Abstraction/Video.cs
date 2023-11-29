@@ -14,16 +14,9 @@ class Video
         Author = author;
     }
 
-    public void AddComment(string author, text);
+    public void SetLengthInSeconds(int length)
     {
-        Comment comment = new Comment(author, text);
-        comment.Add(comment);
+        LengthInSeconds = length;
     }
-    public int GetNumberOfComments()
-    {
-        return comments.Count;
-    }
-
-
-
+   
 }
