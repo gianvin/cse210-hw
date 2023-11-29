@@ -3,8 +3,19 @@ using System.Collections.Generic;
 
 class Order
 {
-    private List<Product> Products {get; set;}
-    private Customer Customer {get; set;}
+    private List<Product> _products;
+    private Customer _customer;
+
+    public List<Product> Products
+    {
+        get {return _products;}
+        set { _products = value;}
+    }
+    public Customer Customer
+    {
+        get {return _customer;}
+        set {_customer = value;}
+    }
 
     public decimal CalculateCost()
     {

@@ -24,19 +24,19 @@ class Program
         {
           Name = "Widget",
           ProductId = 1,  
-          Price = 10.99,
+          Price = 10.99M,
           Quantity = 3
         };
 
         Order order = new Order
         {
-            Products = new List<Product> { Product },
+            Products = new List<Product> {product},
             Customer = customer
         };
 
-       decimal totalCost = order.CalculateTotalCost();
+       decimal totalCost = order.CalculateCost();
        Console.WriteLine($"Total Cost of the Order: {totalCost:C}");
        Console.WriteLine(order.GetPackingLabel());
-       Console.WriteLine(Order.GetShippingLabel());
+       Console.WriteLine(order.GetShippingLabel());
     }
 }

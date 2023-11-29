@@ -9,7 +9,7 @@ class Product
  private decimal _price;
  private int _quantity;
 
-public string fileName
+public string Name
 {
     get {return _name;}
     set { _name = value;}
