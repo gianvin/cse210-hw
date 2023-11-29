@@ -11,7 +11,7 @@ class Program
         myVideo.AddComment("Liza", "Well explained.");
         myVideo.AddComment("Rose", "Explanation is very clear. Thank you.");
 
-        myVideo.SetLengthInSeconds(300);
+        myVideo.SetLengthInSeconds(266);
 
         Console.WriteLine($"Video Title: {myVideo.Title}");
         Console.WriteLine($"Video Author: {myVideo.Author}");
