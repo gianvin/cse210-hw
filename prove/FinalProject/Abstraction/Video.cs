@@ -2,5 +2,4 @@ using System;
 
 class Video
 {
-    
 }
