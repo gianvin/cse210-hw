@@ -4,10 +4,10 @@ using System.Collections.Generic;
 class Address
 {
     //Fields
-    private string Street {get; set;}
-    private string City {get; set;}
-    private string StateProvince {get; set;}
-    private string Country {get; set;}
+    public string Street {get; set;}
+    public string City {get; set;}
+    public string StateProvince {get; set;}
+    public string Country {get; set;}
 
     //methods
     public bool IsInUSA()

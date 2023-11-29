@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Concurrent;
+using System.IO;
 
 class Program
 {
@@ -9,7 +10,7 @@ class Program
         {
             Street = "456 Main St.",
             City = "Los Angeles",
-            StateProvince = "California";
+            StateProvince = "California",
             Country = "United States of America"
             };
 
@@ -22,8 +23,8 @@ class Program
         Product product = new Product
         {
           Name = "Widget",
-          ProductId = "1",  
-          Price = "$ 10.99",
+          ProductId = 1,  
+          Price = 10.99,
           Quantity = 3
         };
 
