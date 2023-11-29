@@ -31,7 +31,7 @@ public int Quantity
 }
   public decimal CalculateTotalPrice()
   {
-    return Price * Quantity;
+    return _price * _quantity;
   }
 
 }
