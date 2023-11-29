@@ -2,7 +2,7 @@ using System;
 
 class Video
 {
-    public string Title { get; set}
+    public string Title { get; set;}
     public string Author { get; set;}
 
     public List<Comment> comments = new List<Comment>();
@@ -10,7 +10,7 @@ class Video
 
     public Video(string title, string author)
     {
-        Title - title;
+        Title = title;
         Author = author;
     }
 
