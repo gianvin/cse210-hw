@@ -5,7 +5,7 @@ using System.IO;
 class Program
 {
     static void Main(string[] args)
-    {
+    {   
         Address customerAddress = new Address
         {
             Street = "456 Main St.",
