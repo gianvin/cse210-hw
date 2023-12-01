@@ -8,8 +8,11 @@ class Program
 
     static void Main(string[] args)
     {   
-        List<Product> products = ReadProductsFromFile("products.txt");
+        Console.WriteLine("Available Products:");
         
+        List<Product> products = ReadProductsFromFile("products.txt");
+        DisplayProducts(products);
+
         Customer customer = GetUserInformation();
 
         Order order = CreateOrder(customer, products);
@@ -88,30 +91,53 @@ class Program
     }
     static Order CreateOrder(Customer customer, List<Product> products)
     {
-         Console.WriteLine("Available Products:");
-         DisplayProducts(products);
-
-        Console. WriteLine("Enter your order:");
-        Console.Write("Product Id : ");
-        string productId = Console.ReadLine();
-
-        Console.Write("Product Name: ");
-        string productName = Console.ReadLine();
-
-        Console.Write("Product Quantity: ");
-        string productQuantity = Console.ReadLine();
-        
-        Console.Write("Product Price: ");
-        string productPrice = Console.ReadLine();
-
+         
         Order order = new Order
         {
-            Products = products,
             Customer = customer
         };
 
-        return order;
+        Console. WriteLine("Enter your order:");
+        
+        while (true)
+        {
+            Console.Write("Enter Product Id (or 'done'to finish): ");
+            string inputProductId = Console.ReadLine();
+
+        if (inputProductId.ToLower() == "done")
+            break;
+        
+        if(int.TryParse(inputProductId, out int productId))
+        {
+            Product selectedProduct = products.Find(p => p.ProductId == productId);
+            
+            if(selectedProduct != null)
+            {
+                Console.Write($"Enter quantity for {selectedProduct.Name}:");
+                if (int.TryParse(Console.ReadLine(), out int quantity))
+                {
+                    selectedProduct.Quantity = quantity;
+                    order.Products.Add(selectedProduct);
+                }
+                else
+                {
+                    Console.WriteLine("Invalid quantity. Please enter a valid number. ");
+                }
+            }
+            else
+            {
+                Console.WriteLine($"Product with ID {productId} not found.");
+            }
+        }
+        else
+        {
+           Console.WriteLine("Invalid input. Please enter a valid Product ID."); 
+        }
+        
     }
+    return order;
+    }
+        
     static void DisplayOrderInformation(Order order)
     {
         decimal totalCost = order.CalculateCost();
