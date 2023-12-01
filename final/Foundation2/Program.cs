@@ -10,6 +10,9 @@ class Program
     {   
         List<Product> products = ReadProductsFromFile("products.txt");
         
+        Console.WriteLine("Available Products:");
+        DisplayProducts(products);
+        
         Customer customer = GetUserInformation();
 
         Order order = CreateOrder(customer, products);
@@ -54,6 +57,7 @@ class Program
     }
     static Customer GetUserInformation()
     {
+        
         Console.Write("Enter your name: ");
         string userName = Console.ReadLine();
 
@@ -80,8 +84,27 @@ class Program
         return new Customer {Name = userName, Address = userAddress};
     }
 
+    static void DisplayProducts(List<Product> products)
+    {
+        foreach (Product product in products)
+        Console.WriteLine($"Product ID: {product.ProductId}, Product Name: {product.Name}, Product Price: {product.Price}");
+    }
     static Order CreateOrder(Customer customer, List<Product> products)
     {
+        
+        Console. WriteLine("Enter your order:");
+        Console.Write("Product Id : ");
+        string productId = Console.ReadLine();
+
+        Console.Write("Product Name: ");
+        string productName = Console.ReadLine();
+
+        Console.Write("Product Quantity: ");
+        string productQuantity = Console.ReadLine();
+        
+        Console.Write("Product Price: ");
+        string productPrice = Console.ReadLine();
+
         Order order = new Order
         {
             Products = products,
