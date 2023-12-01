@@ -10,9 +10,6 @@ class Program
     {   
         List<Product> products = ReadProductsFromFile("products.txt");
         
-        Console.WriteLine("Available Products:");
-        DisplayProducts(products);
-        
         Customer customer = GetUserInformation();
 
         Order order = CreateOrder(customer, products);
@@ -91,7 +88,9 @@ class Program
     }
     static Order CreateOrder(Customer customer, List<Product> products)
     {
-        
+         Console.WriteLine("Available Products:");
+         DisplayProducts(products);
+
         Console. WriteLine("Enter your order:");
         Console.Write("Product Id : ");
         string productId = Console.ReadLine();
