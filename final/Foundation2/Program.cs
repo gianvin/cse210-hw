@@ -32,7 +32,7 @@ class Program
 
                 if (parts.Length == 3 &&
                 int.TryParse(parts[0], out int productId) &&
-                decimal.TryParse(parts[2], out decimal price))
+                decimal.TryParse(parts[2], System.Globalization.NumberStyles.Currency, System.Globalization.CultureInfo.InvariantCulture, out decimal price))
                 {
                     Product product = new Product
                     {
