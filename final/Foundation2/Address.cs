@@ -33,7 +33,7 @@ class Address
     //methods
     public bool IsInUSA()
     {
-        return Country.Equals("United Satate, StringComparison.OrdinalIgnoreCase");
+        return Country.Equals("United State, StringComparison.OrdinalIgnoreCase");
     }
     public string GetFullAddress()
     {
