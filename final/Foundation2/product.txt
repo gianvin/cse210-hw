@@ -1,0 +1,4 @@
+F001, Loaf Bread, 1.25
+T001, Face Powder, 2.25
+W003, Polo Shirt, 8.45
+C008, Laundry Detergent, 3.15
