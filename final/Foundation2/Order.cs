@@ -21,13 +21,29 @@ class Order
     {
         decimal totalCost = 0;
 
-        foreach (Product product in Products)
+        foreach (Product product in _products)
         {
             totalCost += product.CalculateTotalPrice();
         }
 
+        totalCost += CalculateShippingCost();
         return totalCost;
     }
+
+    private decimal CalculateShippingCost()
+   { 
+        decimal shippingCost;
+
+        if (_customer.Address.IsInUSA())
+        {
+            shippingCost = 5m;
+        }
+        else
+        {
+            shippingCost = 35m;
+        }
+        return shippingCost;
+   }
 
     public string GetPackingLabel()
     {
