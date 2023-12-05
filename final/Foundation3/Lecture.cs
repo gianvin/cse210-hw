@@ -8,7 +8,7 @@ class Lecture : Event
     //fields
     private string speaker;
     private int capacity;
-    private List<string> registeredAttendees = new List<string>();
+    private List<string> registereAttendees = new List<string>();
 
     //methods
     public Lecture(string title, string description, string date, string time, string address, string speaker, int capacity)
@@ -30,11 +30,11 @@ class Lecture : Event
         set { capacity = value; }
     }
 
-    public void RegisteredAttendee(string attendee)
+    public void RegistereAttendee(string attendee)
     {
-        if (registeredAttendees.Count < capacity)
+        if (registereAttendees.Count < capacity)
         {
-            registeredAttendees.Add(attendee);
+            registereAttendees.Add(attendee);
             Console.WriteLine($"{attendee} registered for the lecture.");
         }
         else
