@@ -33,4 +33,8 @@ class OutdoorGathering : Event
            Console.WriteLine("Weather forecast not available."); 
         }
     }
+    public override string ToString()
+    {
+        return base.ToString() + $"Weather Forecast: {WeatherForecast}\n";
+    }
 }
