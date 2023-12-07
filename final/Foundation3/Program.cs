@@ -21,8 +21,9 @@ class Program
 
         //Reception Event
         Reception receptionEvent = new Reception(" 50th Birthday of Dr. Crisanto Reyes", "Birthday Celebration", "December 23, 2023", "7:00 PM", "Regalado's Event Place Rizal Avenue Caloocan Philippines");
+        Console.WriteLine(receptionEvent);
         receptionEvent.RSVP(" leah@gmail.com");
         receptionEvent.RSVP(" grace.forever@yahoo.com");
-        Console.WriteLine(receptionEvent);
+       
     }
 }
