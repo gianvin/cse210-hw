@@ -41,4 +41,8 @@ class Lecture : Event
             Console.WriteLine($"Sorry, the lecture is at full capacity. {attendee} cannot register.");
         }
     }
+    public override string ToString()
+    {
+     return base.ToString() + $"Speaker: {Speaker}\nCapacity: {Capacity}\n";   
+    }
 }

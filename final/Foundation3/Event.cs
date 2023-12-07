@@ -51,4 +51,9 @@ class Event
         private set {address = value; }
     }
 
+    public override string ToString()
+    {
+       return $" Title: {Title}\nDescription: {Description}\nDate: {Date}\nTime: {Time}\nAddress: {Address}\n";
+    }
+
 }
