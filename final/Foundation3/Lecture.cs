@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Reflection;
-using System.Reflection.Metadata.Ecma335;
 
 class Lecture : Event
 {
@@ -14,21 +12,22 @@ class Lecture : Event
     public Lecture(string title, string description, string date, string time, string address, string speaker, int capacity)
         : base(title, description, date, time, address)
     {
-        this.speaker = speaker;
-        this.capacity = capacity;
+        Speaker = speaker;
+        Capacity = capacity;
     }    
 
     public string Speaker
     {
         get { return speaker; }
-        set { speaker = value; }
+        private set { speaker = value; }
     }
 
     public int Capacity
     {
         get { return capacity; }
-        set { capacity = value; }
+        private set { capacity = value; }
     }
+    
 
     public void RegisterAttendee(string attendee)
     {
