@@ -29,6 +29,10 @@ public int Quantity
     get {return _quantity;}
     set {_quantity = value;}
 }
+public Product()
+{
+  Quantity = 0;
+}
   public decimal CalculateTotalPrice()
   {
     return _price * _quantity;

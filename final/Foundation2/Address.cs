@@ -37,7 +37,11 @@ class Address
     }
     public string GetFullAddress()
     {
-        return $"{_street}, {_city}, {_stateProvince}, {_country}";
+        return $"{Street}, {City}, {StateProvince}, {Country}";
     }
 
+    public static implicit operator string(Address v)
+    {
+        throw new NotImplementedException();
+    }
 }
