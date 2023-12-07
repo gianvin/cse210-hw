@@ -26,7 +26,7 @@ class OutdoorGathering : Event
     {
         if (!string.IsNullOrEmpty(weatherForecast))
         {
-            Console.WriteLine($"Weather Forecas: {weatherForecast}");
+            Console.WriteLine($"Weather Forecast: {weatherForecast}");
         }
         else
         {
@@ -35,6 +35,6 @@ class OutdoorGathering : Event
     }
     public override string ToString()
     {
-        return base.ToString() + $"Weather Forecast: {WeatherForecast}\n";
+        return base.ToString();
     }
 }
