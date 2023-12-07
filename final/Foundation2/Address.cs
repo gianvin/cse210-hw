@@ -40,8 +40,5 @@ class Address
         return $"{Street}, {City}, {StateProvince}, {Country}";
     }
 
-    public static implicit operator string(Address v)
-    {
-        throw new NotImplementedException();
-    }
+  
 }
