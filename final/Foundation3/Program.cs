@@ -9,15 +9,17 @@ class Program
         lectureEvent.RegisterAttendee("Dalisay Romero");
         lectureEvent.RegisterAttendee("Robert De Guzman");
         Console.WriteLine(lectureEvent); 
-        
+
         // OutdoorGathering Event
         OutdoorGathering outdoorEvent = new OutdoorGathering("2023 National Tree Planting Activity", "Planting Activity for Youth Advocates on Stop Global Warning", "December 18, 2023", "7:00 AM", "La Mesa Dam Quezon City Philippines");
         outdoorEvent.WeatherForecast = "Sunny and Clear";
         outdoorEvent.DisplayWeatherMessage();
+        Console.WriteLine(outdoorEvent);
 
         //Reception Event
         Reception receptionEvent = new Reception(" 50th Birthday of Dr. Crisanto Reyes", "Birthday Celebration", "December 23, 2023", "7:00 PM", "Regalado's Event Place Rizal Avenue Caloocan Philippines");
         receptionEvent.RSVP(" leah@gmail.com");
         receptionEvent.RSVP(" grace.forever@yahoo.com");
+        Console.WriteLine(receptionEvent);
     }
 }
