@@ -19,4 +19,9 @@ class Reception : Event
             rsvpList.Add(email);
             Console.WriteLine($"RSVP received from{email} for the reception. ");
         }
+
+    public override string ToString()
+    {
+     return base.ToString();  
+    }
 }
